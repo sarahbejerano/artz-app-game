@@ -1,4 +1,10 @@
 @import 'variables.scss';
 
+
 h1 {color: $color-fucsia; }
 p { color: $color-cyan; }
+
+h1{
+    font-family:"Pixeboy";
+    font-size: 200px;
+}
