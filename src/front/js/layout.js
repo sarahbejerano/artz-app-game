@@ -5,6 +5,8 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
+import { Navbar } from "./component/navbar";
+import { LinkButton } from "./component/linkButton";
 import { Footer } from "./component/footer";
 import { Title } from "./component/title";
 
@@ -17,6 +19,8 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Title />
+					<Navbar />
+					<LinkButton text="text" link="link" />
 					<Switch>
 						<Route exact path="/">
 							<Home />
@@ -27,6 +31,7 @@ const Layout = () => {
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
+
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
