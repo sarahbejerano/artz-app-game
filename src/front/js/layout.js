@@ -5,8 +5,8 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
-import { Navbar } from "./component/navbar";
 import { LinkButton } from "./component/linkButton";
+import { PageButton } from "./component/pageButton";
 import { Footer } from "./component/footer";
 import { Title } from "./component/title";
 
@@ -19,8 +19,8 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Title />
-					<Navbar />
 					<LinkButton text="text" link="link" />
+					<PageButton />
 					<Switch>
 						<Route exact path="/">
 							<Home />

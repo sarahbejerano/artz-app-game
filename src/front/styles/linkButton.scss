@@ -2,16 +2,16 @@
 
 .pixel-button {
     height: 88px;
+    display: inline-block;
+    margin:0 8px;
+
 }
 
 .body {
     height: 88px;
-    width: 186px;
     background-color:$color-cyan;
     position: relative;  
     box-shadow:4px 4px 0 0px $color-fucsia;
-    margin-right: 4px;
-    margin-bottom: 4px;
     
     .text{
         text-align: center;
@@ -45,11 +45,8 @@
 
     &:active{
         box-shadow:none;
-        margin-left: 4px;
-        margin-top: 4px;
         color:$color-fucsia; 
-        margin-right: 0px;
-        margin-bottom: 0px;    
+        transform: translate(4px, 4px);
         &::after{
           box-shadow:none ;
         }
@@ -62,7 +59,6 @@
 
 .linkStyle{
     text-decoration: none;
-    background-color: $color-cyan;
 }
 
 
