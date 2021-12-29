@@ -1,0 +1,23 @@
+@import "variables.scss";
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: "Pixeboy";
+    color: $color-fucsia;
+    text-shadow: 2px 2px $color-cyan;
+    font-size: 100px;
+}
+
+h1 {
+    font-size: 100px;
+}
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 50px;
+    }
+}

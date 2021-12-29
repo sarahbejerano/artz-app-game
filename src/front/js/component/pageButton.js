@@ -1,21 +1,22 @@
 import React from "react";
-// import { Button } from "react-bootstrap";
-import "../../styles/pageButton.scss"
+import "../../styles/button.scss"
+import PropTypes from 'prop-types';
 
 
-
-
-export const PageButton = () => {
+export const PageButton = ({ text, callback, variant = "primary" }) => {
 
     return (
-        <button className="pixel-button">
+        <button className={`pixel-button ${variant}`} onClick={callback}>
             <div className="body">
-                <p className="text">button</p>
+                <p className="text">{text}</p>
             </div>
         </button>
     )
 };
 
 
-
-// aqui se definen  los propTypes que voy a necesitar para el boton
+PageButton.propTypes = {
+    text: PropTypes.string,
+    callback: PropTypes.func,
+    variant: PropTypes.string,
+};

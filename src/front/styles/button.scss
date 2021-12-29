@@ -1,0 +1,79 @@
+@import "variables.scss";
+
+.link-style {
+    text-decoration: none;
+}
+
+.pixel-button {
+    height: 88px;
+    display: inline-block;
+    margin: 0 8px;
+
+    &.primary {
+        .body {
+            background-color: $color-cyan;
+            box-shadow: 4px 4px 0 0px $color-fucsia;
+        }
+    }
+
+    &.secondary {
+        .body {
+            background-color: $color-bone;
+            box-shadow: 4px 4px 0 0px $color-cyan;
+
+            &::before {
+                background-color: $color-bone;
+            }
+            &::after {
+                background-color: $color-bone;
+                box-shadow: 4px 4px 0 0px $color-cyan;
+            }
+        }
+    }
+
+    .body {
+        height: 88px;
+        position: relative;
+
+        .text {
+            text-align: center;
+            vertical-align: middle;
+            font-size: 70px;
+            font-family: Pixeboy;
+            line-height: 88px;
+            color: #222323;
+        }
+        &::after {
+            position: absolute;
+            right: -4px;
+            top: 4px;
+            width: 4px;
+            height: 80px;
+            content: "";
+            background-color: $color-cyan;
+            box-shadow: 4px 4px 0 0px $color-fucsia;
+        }
+
+        &::before {
+            position: absolute;
+            left: -4px;
+            top: 4px;
+            width: 4px;
+            height: 80px;
+            content: "";
+            background-color: $color-cyan;
+        }
+
+        &:active {
+            box-shadow: none;
+            color: $color-fucsia;
+            transform: translate(4px, 4px);
+            &::after {
+                box-shadow: none;
+            }
+            .text {
+                color: $color-fucsia;
+            }
+        }
+    }
+}
