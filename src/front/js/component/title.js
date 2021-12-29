@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "../../styles/title.scss"
+
 
 export const Title = () => {
 	return (
-		<nav className="navbar">
-			<div>
-				<h1>Museum Nightmare</h1>
-			</div>
-		</nav >
+		<div className="container">
+			<h1>Museum Nightmare</h1>
+		</div>
 	);
 };
+

@@ -5,18 +5,20 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
-import { Footer } from "./component/footer";
+import { LinkButton } from "./component/linkButton";
+import { PageButton } from "./component/pageButton";
 import { Title } from "./component/title";
 
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
-
 	return (
 		<div className="container-lg">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Title />
+					<LinkButton text="text" link="link" variant="secondary" />
+					<PageButton text="text" callback={() => { console.log("text") }} />
 					<Switch>
 						<Route exact path="/">
 							<Home />
@@ -27,11 +29,7 @@ const Layout = () => {
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
 					</Switch>
-					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
