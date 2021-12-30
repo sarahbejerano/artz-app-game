@@ -3,25 +3,29 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
+import { QuestionId } from "./component/questionId";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
-import { LinkButton } from "./component/linkButton";
-import { PageButton } from "./component/pageButton";
 import { Title } from "./component/title";
+
 
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
 	return (
-		<div className="container-lg">
-			<BrowserRouter basename={basename}>
+		<div className="container-flex" style={{
+			maxWidth: "960px",
+			margin: "0 auto"
+		}}>
+			< BrowserRouter basename={basename} >
 				<ScrollToTop>
 					<Title />
-					<LinkButton text="text" link="link" variant="secondary" />
-					<PageButton text="text" callback={() => { console.log("text") }} />
 					<Switch>
 						<Route exact path="/">
 							<Home />
+						</Route>
+						<Route exact path="/question">
+							<QuestionId />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
@@ -31,8 +35,8 @@ const Layout = () => {
 						</Route>
 					</Switch>
 				</ScrollToTop>
-			</BrowserRouter>
-		</div>
+			</BrowserRouter >
+		</div >
 	);
 };
 

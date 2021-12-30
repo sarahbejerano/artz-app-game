@@ -31,6 +31,22 @@
         }
     }
 
+    &.small {
+        .body {
+            height: 50px;
+            .text {
+                font-size: 30px;
+                line-height: 55px;
+            }
+            &::after {
+                height: 42px;
+            }
+            &::before {
+                height: 42px;
+            }
+        }
+    }
+
     .body {
         height: 88px;
         position: relative;
