@@ -1,0 +1,35 @@
+@import "variables.scss";
+
+.card {
+    background-color: $color-bone;
+    font-family: Pixeboy;
+}
+
+.cardTitle {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 100px;
+    color: #222323;
+}
+.imageContainer {
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.imageQuestion {
+    display: block;
+    object-fit: cover;
+    width: unset;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.cardBody,
+.form-check-input {
+    background-color: $color-bone;
+    text-align: center;
+    vertical-align: middle;
+}
+.answersBody {
+    font-size: 50px;
+}
