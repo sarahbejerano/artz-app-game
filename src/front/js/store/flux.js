@@ -1,46 +1,59 @@
+import { QuestionId } from "../component/questionId";
+
+const randomNumber = (limit) => Math.floor(Math.random() * limit);
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
+		// returning un objeto que tiene dentro propiedades: store and action, que a su vez tienen objetos dentro. Action tiene funciones como objetos dentro
 		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			score: 0,
+			question: null,
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-
-			getMessage: () => {
+			getQuestion: () => {
 				// fetching data from the backend
-				fetch(process.env.BACKEND_URL + "/api/hello")
+				fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?q=&hasImages=true&departmentId=11")
 					.then(resp => resp.json())
-					.then(data => setStore({ message: data.message }))
-					.catch(error => console.log("Error loading message from backend", error));
+					.then(data => {
+						const answerOne = data.objectIDs[randomNumber(data.objectIDs.length)];
+						const answerTwo = data.objectIDs[randomNumber(data.objectIDs.length)];
+						const answerThree = data.objectIDs[randomNumber(data.objectIDs.length)];
+
+						return Promise.all([
+							fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + answerOne),
+							fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + answerTwo),
+							fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + answerThree),
+						]);
+
+
+					})
+					.then(fetchResults => {
+						return Promise.all([
+							fetchResults[0].json(),
+							fetchResults[1].json(),
+							fetchResults[2].json(),
+						]);
+					})
+					.then(answers => {
+						const correctAnswer = answers[randomNumber(answers.length)];
+						console.log(answers)
+						setStore({
+							question: {
+								answers: answers,
+								correctAnswer: correctAnswer,
+								questionPrompt: "Who is the author?"
+							}
+						});
+
+					})
+					.catch(error => console.log("Error loading message from backend", error))
 			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+			answerQuestion: ({ id }) => {
+				const { favorites } = getStore();
+				const { [id]: remove, ...newFavorites } = favorites;
+				setStore({ favorites: newFavorites });
 			}
 		}
 	};

@@ -7,7 +7,7 @@ import "../../styles/questionId.scss";
 import { ProgressBar } from "../component/progressBar";
 
 
-export const QuestionId = ({ imageQuestion, questionCard,
+export const QuestionId = ({ imageQuestion, questionPrompt,
     answerOne, answerTwo, answerThree }) => {
     const { store, actions } = useContext(Context);
 
@@ -17,34 +17,34 @@ export const QuestionId = ({ imageQuestion, questionCard,
                 <Card.Img
                     className="imageQuestion"
                     variant="top"
-                    src="https://images.metmuseum.org/CRDImages/ad/mobile-large/DP-21446-001.jpg"
+                    src={imageQuestion}
                 />
             </div>
 
             <div className="cardBody">
                 <Card.Body className="questionBody">
-                    Who is the artist?
+                    {questionPrompt}
                 </Card.Body>
 
                 <Card.Text className="answersBody">
 
                     <div className="form-check">
                         <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                        <label className="form-check-label" for="flexRadioDefault1">
-                            Winslow Homer
+                        <label className="form-check-label" htmlFor="flexRadioDefault1">
+                            {answerOne}
                         </label>
                     </div>
 
                     <div className="form-check">
                         <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
-                        <label className="form-check-label" for="flexRadioDefault2">
-                            Edward Hopper
+                        <label className="form-check-label" htmlFor="flexRadioDefault2">
+                            {answerTwo}
                         </label>
                     </div>
                     <div className="form-check">
                         <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked />
-                        <label className="form-check-label" for="flexRadioDefault3">
-                            Joaquín Sorolla
+                        <label className="form-check-label" htmlFor="flexRadioDefault3">
+                            {answerThree}
                         </label>
                     </div>
 
@@ -64,7 +64,7 @@ export const QuestionId = ({ imageQuestion, questionCard,
 
 QuestionId.propTypes = {
     imageQuestion: PropTypes.string,
-    questionCard: PropTypes.string,
+    questionPrompt: PropTypes.string,
     answerOne: PropTypes.string,
     answerTwo: PropTypes.string,
     answerThree: PropTypes.string,
