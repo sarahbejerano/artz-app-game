@@ -4,6 +4,8 @@ import { PageButton } from "../component/pageButton";
 import { Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "../../styles/questionId.scss";
+import { ProgressBar } from "../component/progressBar";
+
 
 export const QuestionId = ({ imageQuestion, questionCard,
     answerOne, answerTwo, answerThree }) => {
@@ -11,8 +13,6 @@ export const QuestionId = ({ imageQuestion, questionCard,
 
     return (
         <Card className="cardQuestion">
-            <Card.Title className="cardTitle">1/10 QUESTION</Card.Title>
-
             <div className="imageContainer">
                 <Card.Img
                     className="imageQuestion"
@@ -23,7 +23,7 @@ export const QuestionId = ({ imageQuestion, questionCard,
 
             <div className="cardBody">
                 <Card.Body className="questionBody">
-                    <h1>Who is the artist?</h1>
+                    Who is the artist?
                 </Card.Body>
 
                 <Card.Text className="answersBody">
@@ -49,10 +49,10 @@ export const QuestionId = ({ imageQuestion, questionCard,
                     </div>
 
                 </Card.Text>
-
-
+                {/* <Card.Title className="cardTitle">1/10 QUESTION</Card.Title> */}
+                <ProgressBar className="proBar" />
                 <Card.Footer className="footer">
-                    <PageButton text="next" variant="primary small" callback={() => { console.log("text") }} />
+                    <PageButton text="next" variant="primary" callback={() => { console.log("text") }} />
                 </Card.Footer>
             </div>
         </Card>
