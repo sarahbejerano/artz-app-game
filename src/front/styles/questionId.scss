@@ -1,15 +1,16 @@
 @import "variables.scss";
 
 .card {
-    background-color: $color-bone;
+    background-color: $color-charcoal;
     font-family: Pixeboy;
+    border: 0px;
 }
 
 .cardTitle {
     text-align: center;
     vertical-align: middle;
-    font-size: 100px;
-    color: #222323;
+    font-size: 60px;
+    color: $color-bone;
 }
 .imageContainer {
     height: 500px;
@@ -23,13 +24,50 @@
     height: 100%;
     margin: 0 auto;
 }
+.form-check-input {
+    background-color: $color-fucsia;
+}
 
 .cardBody,
 .form-check-input {
-    background-color: $color-bone;
-    text-align: center;
+    text-align: left;
     vertical-align: middle;
 }
+
 .answersBody {
-    font-size: 50px;
+    font-size: 40px;
+    margin-left: 60px;
+    margin-top: -30px;
+    color: $color-bone;
+    margin-bottom: 30px;
+}
+
+.form-check-input:checked {
+    background-color: $color-fucsia;
+    border-color: $color-fucsia;
+}
+
+.card-footer {
+    padding: 0px;
+    background-color: $color-charcoal;
+    border-radius: 0px;
+    border-top: 0px;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.questionBody,
+.proBar {
+    text-align: center;
+    vertical-align: middle;
+    color: $color-bone;
+    font-size: 80px;
+    width: 100%;
 }

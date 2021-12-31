@@ -10,13 +10,11 @@ import { Title } from "./component/title";
 
 
 
+
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
 	return (
-		<div className="container-flex" style={{
-			maxWidth: "960px",
-			margin: "0 auto"
-		}}>
+		<div className="container-flex appContainer">
 			< BrowserRouter basename={basename} >
 				<ScrollToTop>
 					<Title />
