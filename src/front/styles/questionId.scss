@@ -2,28 +2,32 @@
 
 .card {
     background-color: $color-charcoal;
-    font-family: Pixeboy;
-    border: 0px;
+    font-family: $primary-font;
+    border: 0;
 }
 
 .cardTitle {
     text-align: center;
     vertical-align: middle;
-    font-size: 60px;
+    font-size: 6vh;
     color: $color-bone;
 }
 .imageContainer {
-    height: 500px;
-    margin-bottom: 20px;
+    height: 40vh;
+    margin-bottom: 2vh;
+    max-width: 80%;
+    margin: auto;
 }
 
 .imageQuestion {
     display: block;
-    object-fit: cover;
-    width: unset;
+    object-fit: contain;
+    width: 100%;
     height: 100%;
     margin: 0 auto;
+    max-height: 40vh;
 }
+
 .form-check-input {
     background-color: $color-fucsia;
 }
@@ -35,11 +39,12 @@
 }
 
 .answersBody {
-    font-size: 40px;
-    margin-left: 60px;
-    margin-top: -30px;
+    font-size: 3vh;
+    margin-left: 6vh;
+    margin-top: -2vh;
     color: $color-bone;
-    margin-bottom: 30px;
+    margin-bottom: 3vh;
+    max-width: 80%;
 }
 
 .form-check-input:checked {
@@ -48,14 +53,12 @@
 }
 
 .card-footer {
-    padding: 0px;
+    padding: 0;
     background-color: $color-charcoal;
-    border-radius: 0px;
-    border-top: 0px;
+    border-radius: 0;
+    border-top: 0;
     text-align: center;
     vertical-align: middle;
-    margin-bottom: 60px;
-    margin-top: 30px;
 }
 
 p {
@@ -68,6 +71,10 @@ p {
     text-align: center;
     vertical-align: middle;
     color: $color-bone;
-    font-size: 80px;
+    font-size: 6vh;
     width: 100%;
+}
+.card-body {
+    padding: 0;
+    margin-bottom: 1vh;
 }

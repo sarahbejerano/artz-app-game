@@ -26,7 +26,7 @@ export const QuestionId = ({ imageQuestion, questionPrompt,
                     {questionPrompt}
                 </Card.Body>
 
-                <Card.Text className="answersBody">
+                <div className="answersBody">
 
                     <div className="form-check">
                         <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
@@ -47,12 +47,11 @@ export const QuestionId = ({ imageQuestion, questionPrompt,
                             {answerThree}
                         </label>
                     </div>
-
-                </Card.Text>
+                </div>
                 {/* <Card.Title className="cardTitle">1/10 QUESTION</Card.Title> */}
                 <ProgressBar className="proBar" />
                 <Card.Footer className="footer">
-                    <PageButton text="next" variant="primary" callback={() => { console.log("text") }} />
+                    <PageButton text="next" variant="primary small" callback={() => { console.log("text") }} />
                 </Card.Footer>
             </div>
         </Card>

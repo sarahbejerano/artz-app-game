@@ -1,7 +1,7 @@
 @import "variables.scss";
 body,
 html {
-	background-color: $color-bone;
+	background-color: $color-charcoal;
 }
 
 #app {
@@ -21,8 +21,9 @@ input[type="reset"] {
 }
 
 .appContainer {
-	max-width: 960px;
+	width: 70vh;
 	margin: 0 auto;
-	border: 1px solid $color-charcoal;
-	box-shadow: 0px 0px 3px 3px black;
+	border: 0.1vh solid $color-charcoal;
+	box-shadow: 0 0 0.3vh 0.3vh black;
+	height: 100vh;
 }

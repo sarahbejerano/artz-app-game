@@ -4,53 +4,46 @@
     background-color: $color-charcoal;
     display: flex;
     align-items: center;
-    height: 54px;
-    width: 800px;
-    border: 4px solid $color-fucsia;
+    height: 5.4vh;
+    width: 80%;
+    border: 0.4vh solid $color-fucsia;
     position: relative;
     box-sizing: border-box;
     margin: 0 auto;
 
-    // .text {
-    //     text-align: center;
-    //     vertical-align: middle;
-    //     font-size: 40px;
-    //     font-family: Pixeboy;
-    //     line-height: 52px;
-    //     color: #222323;
-    // }
     &::after {
         position: absolute;
-        right: -8px;
-        top: 2px;
-        width: 4px;
-        height: 42px;
+        right: -0.8vh;
+        top: 0.2vh;
+        width: 0.4vh;
+        height: 4.2vh;
         content: "";
         background-color: $color-fucsia;
     }
     &::before {
         position: absolute;
-        left: -8px;
-        top: 2px;
-        width: 4px;
-        height: 42px;
+        left: -0.8vh;
+        top: 0.2vh;
+        width: 0.4vh;
+        height: 4.2vh;
         content: "";
         background-color: $color-fucsia;
     }
 
     .inner {
         background-color: $color-cyan;
-        height: 46px;
-        width: 250px;
+        height: 4.6vh;
+        width: 25vh;
         transition: width 100ms ease-out;
     }
 }
 .progressBarStyle {
     color: $color-cyan;
-    font-size: 50px;
+    font-size: 3vh;
 
     h2 {
-        width: 800px;
+        width: 80%;
         margin: 0 auto;
+        font-size: 2vh;
     }
 }
