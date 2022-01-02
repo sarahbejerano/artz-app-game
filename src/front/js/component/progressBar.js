@@ -1,23 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/progressBar.scss";
 
-// const { useState } = React;
 export const ProgressBar = () => {
-    const [state, setState] = useState(1);
-
+    const { store } = useContext(Context);
+    console.log(store)
     return (
         <div className="progressBarStyle">
-            <h2>{state === 10 ? `100% Complete!` : `${state}/10 questions`}</h2>
-            <ProgressMeter width={state * 10} />
-            {/* <ProgressButton
-                progress={state}
-                makeProgress={() => {
-                    state < 10
-                        ? setState(state + 1)
-                        : setState(0);
-                }}
-            /> */}
+            <h2>{store.score === 10 ? `100% Complete!` : `${store.score}/10 questions`}</h2>
+            <ProgressMeter width={store.score * 10} />
         </div>
 
     );
@@ -31,7 +22,6 @@ const ProgressMeter = ({ width }) => (
                 width: `${width}%`
             }}
         >
-            {/* <h5 className="text">text</h5> */}
         </div>
     </div>
 );

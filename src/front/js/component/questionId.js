@@ -7,17 +7,23 @@ import "../../styles/questionId.scss";
 import { ProgressBar } from "../component/progressBar";
 
 
-export const QuestionId = ({ imageQuestion, questionPrompt,
-    answerOne, answerTwo, answerThree }) => {
-    const { store, actions } = useContext(Context);
-
+export const QuestionId = ({
+    questionPrompt,
+    answers,
+    correctAnswer,
+    onUserSubmit,
+}) => {
+    const [selectedId, setSelectedId] = useState("");
+    const onRadioChanged = (e) => {
+        setSelectedId(e.target.value)
+    }
     return (
         <Card className="cardQuestion">
             <div className="imageContainer">
                 <Card.Img
                     className="imageQuestion"
                     variant="top"
-                    src={imageQuestion}
+                    src={correctAnswer.primaryImageSmall}
                 />
             </div>
 
@@ -27,31 +33,25 @@ export const QuestionId = ({ imageQuestion, questionPrompt,
                 </Card.Body>
 
                 <div className="answersBody">
+                    {answers.map(function (answer, index) {
+                        return <div key={index}
+                            className="form-check">
+                            <input
+                                className="form-check-input" type="radio" name="flexRadioDefault"
+                                id={"flexRadioDefault" + index}
+                                value={answer.objectID}
+                                onChange={onRadioChanged}
+                                checked={selectedId == answer.objectID} />
+                            <label className="form-check-label" htmlFor={"flexRadioDefault" + index}>
+                                {answer.artistDisplayName}
+                            </label>
+                        </div>;
+                    })}
 
-                    <div className="form-check">
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                        <label className="form-check-label" htmlFor="flexRadioDefault1">
-                            {answerOne}
-                        </label>
-                    </div>
-
-                    <div className="form-check">
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
-                        <label className="form-check-label" htmlFor="flexRadioDefault2">
-                            {answerTwo}
-                        </label>
-                    </div>
-                    <div className="form-check">
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked />
-                        <label className="form-check-label" htmlFor="flexRadioDefault3">
-                            {answerThree}
-                        </label>
-                    </div>
                 </div>
-                {/* <Card.Title className="cardTitle">1/10 QUESTION</Card.Title> */}
                 <ProgressBar className="proBar" />
                 <Card.Footer className="footer">
-                    <PageButton text="next" variant="primary small" callback={() => { console.log("text") }} />
+                    <PageButton text="next" variant="primary small" callback={() => { onUserSubmit(selectedId) }} />
                 </Card.Footer>
             </div>
         </Card>
@@ -62,9 +62,9 @@ export const QuestionId = ({ imageQuestion, questionPrompt,
 
 
 QuestionId.propTypes = {
-    imageQuestion: PropTypes.string,
     questionPrompt: PropTypes.string,
-    answerOne: PropTypes.string,
-    answerTwo: PropTypes.string,
-    answerThree: PropTypes.string,
+    answers: PropTypes.array,
+    correctAnswer: PropTypes.object,
+    onUserSubmit: PropTypes.func,
+
 };
