@@ -9,15 +9,20 @@ export const QuestionPage = () => {
     useEffect(() => {
         actions.getQuestion();
     }, []);
+    const onUserSubmit = (selectedId) => {
+        if (selectedId == store.question.correctAnswer.objectID) {
+            actions.getQuestion();
+            actions.increaseScore();
+        }
+    }
     return (
         <div className="questionBody">
             {store.question && (
                 <QuestionId
-                    imageQuestion={store.question.correctAnswer.primaryImageSmall}
                     questionPrompt={store.question.questionPrompt}
-                    answerOne={store.question.answers[0].artistDisplayName}
-                    answerTwo={store.question.answers[1].artistDisplayName}
-                    answerThree={store.question.answers[2].artistDisplayName}
+                    answers={store.question.answers}
+                    correctAnswer={store.question.correctAnswer}
+                    onUserSubmit={onUserSubmit}
                 />
             )}
         </div>

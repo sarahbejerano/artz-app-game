@@ -54,6 +54,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const { favorites } = getStore();
 				const { [id]: remove, ...newFavorites } = favorites;
 				setStore({ favorites: newFavorites });
+			},
+			increaseScore: () => {
+				const { score } = getStore();
+				setStore({ score: score + 1 });
 			}
 		}
 	};
