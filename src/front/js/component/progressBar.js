@@ -10,14 +10,14 @@ export const ProgressBar = () => {
         <div className="progressBarStyle">
             <h2>{state === 10 ? `100% Complete!` : `${state}/10 questions`}</h2>
             <ProgressMeter width={state * 10} />
-            <ProgressButton
+            {/* <ProgressButton
                 progress={state}
                 makeProgress={() => {
                     state < 10
                         ? setState(state + 1)
                         : setState(0);
                 }}
-            />
+            /> */}
         </div>
 
     );

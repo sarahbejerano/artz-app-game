@@ -5,77 +5,77 @@
 }
 
 .pixel-button {
-    height: 88px;
+    height: 8.8vh;
     display: inline-block;
-    margin: 0 8px;
+    margin: 0 0.8vh;
 
     &.primary {
         .body {
             background-color: $color-cyan;
-            box-shadow: 4px 4px 0 0px $color-fucsia;
+            box-shadow: 0.4vh 0.4vh 0 0 $color-fucsia;
         }
     }
 
     &.secondary {
         .body {
             background-color: $color-bone;
-            box-shadow: 4px 4px 0 0px $color-cyan;
+            box-shadow: 0.4vh 0.4vh 0 0 $color-cyan;
 
             &::before {
                 background-color: $color-bone;
             }
             &::after {
                 background-color: $color-bone;
-                box-shadow: 4px 4px 0 0px $color-cyan;
+                box-shadow: 0.4vh 0.4vh 0 0 $color-cyan;
             }
         }
     }
 
     &.small {
         .body {
-            height: 50px;
+            height: 5vh;
             .text {
-                font-size: 30px;
-                line-height: 55px;
+                font-size: 3vh;
+                line-height: 5vh;
             }
             &::after {
-                height: 42px;
+                height: 4vh;
             }
             &::before {
-                height: 42px;
+                height: 4vh;
             }
         }
     }
 
     .body {
-        height: 88px;
+        height: 8.8vh;
         position: relative;
 
         .text {
             text-align: center;
             vertical-align: middle;
-            font-size: 70px;
-            font-family: Pixeboy;
-            line-height: 88px;
-            color: #222323;
+            font-size: 7vh;
+            font-family: $primary-font;
+            line-height: 8.8vh;
+            color: $color-charcoal;
         }
         &::after {
             position: absolute;
-            right: -4px;
-            top: 4px;
-            width: 4px;
-            height: 80px;
+            right: -0.4vh;
+            top: 0.4vh;
+            width: 0.4vh;
+            height: 8vh;
             content: "";
             background-color: $color-cyan;
-            box-shadow: 4px 4px 0 0px $color-fucsia;
+            box-shadow: 0.4vh 0.4vh 0 0 $color-fucsia;
         }
 
         &::before {
             position: absolute;
-            left: -4px;
-            top: 4px;
-            width: 4px;
-            height: 80px;
+            left: -0.4vh;
+            top: 0.4vh;
+            width: 0.4vh;
+            height: 8vh;
             content: "";
             background-color: $color-cyan;
         }
@@ -83,7 +83,7 @@
         &:active {
             box-shadow: none;
             color: $color-fucsia;
-            transform: translate(4px, 4px);
+            transform: translate(0.4vh, 0.4vh);
             &::after {
                 box-shadow: none;
             }
