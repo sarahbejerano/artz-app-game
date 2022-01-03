@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Context } from "../store/appContext";
 import { PageButton } from "../component/pageButton";
 import { Card } from "react-bootstrap";
 import PropTypes from "prop-types";
@@ -23,7 +22,7 @@ export const QuestionId = ({
                 <Card.Img
                     className="imageQuestion"
                     variant="top"
-                    src={correctAnswer.primaryImageSmall}
+                    src={correctAnswer.image}
                 />
             </div>
 
@@ -43,7 +42,7 @@ export const QuestionId = ({
                                 onChange={onRadioChanged}
                                 checked={selectedId == answer.objectID} />
                             <label className="form-check-label" htmlFor={"flexRadioDefault" + index}>
-                                {answer.artistDisplayName}
+                                {answer.title}
                             </label>
                         </div>;
                     })}
