@@ -1,0 +1,45 @@
+@import "variables.scss";
+
+.createProfilePage {
+    .mb-3 {
+        font-family: $primary-font;
+        font-size: 3vh;
+        // padding: 1rem 0.75rem;
+        width: 50vh;
+        align-content: center;
+        margin: auto;
+        input {
+            font-size: 4vh;
+        }
+    }
+    h2 {
+        color: $color-bone;
+        font-family: $primary-font;
+        font-variant: small-caps;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 6vh;
+        margin-bottom: 2vh;
+    }
+    .container {
+        flex-direction: column;
+        .row {
+            width: 100%;
+            margin-bottom: 5vh;
+            .col {
+                text-align: center;
+                img {
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+}
+.buttonContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-size: 4vh;
+    margin-bottom: 4vh;
+}
