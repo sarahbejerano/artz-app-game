@@ -5,16 +5,32 @@ const elasticSearchParams =
 {
     "query": {
         "bool": {
-            "must": [{
-                "exists": {
-                    "field": "artist_title"
-                }
-            },
-            {
-                "exists": {
-                    "field": "image_id"
-                }
-            }
+            "must": [
+                {
+                    "exists": {
+                        "field": "artist_title"
+                    }
+                },
+                {
+                    "exists": {
+                        "field": "image_id"
+                    }
+                },
+                {
+                    "exists": {
+                        "field": "title"
+                    }
+                },
+                {
+                    "exists": {
+                        "field": "date_end"
+                    }
+                },
+                {
+                    "exists": {
+                        "field": "style_title"
+                    }
+                },
             ]
         }
     }
@@ -127,3 +143,5 @@ export const getArtMovementQuestion = (setStore) => {
         })
         .catch(error => console.log("Error loading message from backend", error))
 };
+
+

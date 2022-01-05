@@ -1,6 +1,7 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
+require("./service/firebase");
 
 //include your index.scss file into the bundle
 import "../styles/index.scss";
@@ -10,3 +11,4 @@ import Layout from "./layout";
 
 //render your react application
 ReactDOM.render(<Layout />, document.querySelector("#app"));
+

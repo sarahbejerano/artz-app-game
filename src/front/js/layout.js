@@ -9,7 +9,7 @@ import { Title } from "./component/title";
 import { QuestionPage } from "./pages/question";
 import { CreateProfile } from "./pages/createProfile";
 import { MuseumMap } from "./pages/map";
-
+import { SignIn } from "./pages/signIn";
 
 
 const Layout = () => {
@@ -31,6 +31,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/createprofile">
 							<CreateProfile />
+						</Route>
+						<Route exact path="/signin">
+							<SignIn />
 						</Route>
 						<Route exact path="/map">
 							<MuseumMap />
