@@ -1,0 +1,45 @@
+@import "variables.scss";
+
+@keyframes startAnimation {
+    from {
+        height: 0;
+    }
+    to {
+        height: 42vh;
+    }
+}
+
+.mapImage {
+    position: relative;
+    img {
+        object-fit: contain;
+        width: 100%;
+        height: auto;
+    }
+    .startAnimation {
+        position: absolute;
+        font-size: 7vh;
+        margin: 0;
+        top: 0;
+        left: 0;
+        font-family: $primary-font;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        margin-top: 1vh;
+        font-weight: bolder;
+        animation-name: startAnimation;
+        animation-duration: 2s;
+        animation-timing-function: steps(6);
+        animation-iteration-count: infinite;
+        overflow: hidden;
+        height: 0vh;
+    }
+}
+
+.museumMapPage {
+    justify-content: center;
+    margin-bottom: 4vh;
+}
+img {
+    image-rendering: pixelated;
+}
