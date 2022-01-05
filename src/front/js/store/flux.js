@@ -1,7 +1,7 @@
 
 import { getAuthorQuestion, getPeriodQuestion, getTitleQuestion, getArtMovementQuestion } from '../service/questionGenerator';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc, getFirestore } from "firebase/firestore";
+import { doc, setDoc, getFirestore, getDoc } from "firebase/firestore";
 
 const randomNumber = (limit) => Math.floor(Math.random() * limit);
 const questionsGenerators = [getAuthorQuestion, getPeriodQuestion, getTitleQuestion, getArtMovementQuestion];
@@ -57,9 +57,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then((userCredential) => {
 						console.log("usuario");
 						const user = userCredential.user;
-						setStore({ user: user });
+						const db = getFirestore();
+						return getDoc(doc(db, "profiles", user.uid));
+					})
+					.then(snapshot => {
+						setStore({ user: snapshot.data() });
 					})
 					.catch((error) => {
+						console.log(error);
 						const errorCode = error.code;
 						const errorMessage = error.message;
 					});

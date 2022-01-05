@@ -10,6 +10,7 @@ import { QuestionPage } from "./pages/question";
 import { CreateProfile } from "./pages/createProfile";
 import { MuseumMap } from "./pages/map";
 import { SignIn } from "./pages/signIn";
+import { UserProfile } from "./pages/userprofile";
 
 
 const Layout = () => {
@@ -31,6 +32,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/createprofile">
 							<CreateProfile />
+						</Route>
+						<Route exact path="/userprofile">
+							<UserProfile />
 						</Route>
 						<Route exact path="/signin">
 							<SignIn />
