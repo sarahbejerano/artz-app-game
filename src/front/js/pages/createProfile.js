@@ -12,7 +12,6 @@ import GeorgiaOkeeffe from "../../img/GeorgiaOkeeffe.png"
 import LouiseBorgeoisepng from "../../img/LouiseBorgeoisepng.png"
 import VanGogh from "../../img/VanGogh.png"
 
-
 export const CreateProfile = () => {
     const { store, actions } = useContext(Context);
 
@@ -62,28 +61,6 @@ export const CreateProfile = () => {
                     </div>
                 </div>
             </div>
-
-            {/* <Form>
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>your email address</Form.Label>
-                    <Form.Control type="email" placeholder="name@example.com" />
-                </Form.Group>
-                <div className="mb-3 row">
-                    <label for="inputPassword" className="col-sm-2 col-form-label">Password</label>
-                    <div className="col-sm-10">
-                        <input type="password" className="form-control" id="inputPassword">
-                    </div>
-                </div>
-
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-                    <Form.Label>Your profile name</Form.Label>
-                    <Form.Control type="name" placeholder="your profile name" />
-
-                </Form.Group>
-
-
-
-            </Form> */}
             <div className="buttonContainer">
                 <PageButton text="DONE!!" variant="primary small" callback={() => { }} />
             </div>
