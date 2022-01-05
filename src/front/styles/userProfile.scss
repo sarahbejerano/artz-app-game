@@ -1,11 +1,21 @@
 @import "variables.scss";
 
+@keyframes starAnimation {
+    from {
+        transform: scale3d(0.6, 0.6, 0.6);
+    }
+    to {
+        transform: scale3d(0, 0.6, 0.6);
+    }
+}
+
 .userProfileContainer {
     .pointsStar {
         filter: drop-shadow(0.6vh 0.4vh 0 $color-bone);
         transform: scale(0.6);
         display: flex;
         margin: auto;
+        animation: starAnimation 0.7s infinite alternate;
     }
     .nameProfile {
         color: $color-bone;
