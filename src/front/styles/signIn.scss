@@ -9,12 +9,17 @@
     }
     .mb-3 {
         font-family: $primary-font;
-        font-size: 3vh;
+        font-size: 2.5vh;
         width: 50vh;
         align-content: center;
         margin: auto;
         input {
             font-size: 4vh;
+        }
+        &.form-floating {
+            label {
+                padding: 0.65rem 0.75rem;
+            }
         }
     }
     h2 {

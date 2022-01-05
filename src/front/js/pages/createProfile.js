@@ -34,7 +34,7 @@ export const CreateProfile = () => {
     //se esta llamando la funcion cuando cambia el usuario, y si el usuario esta creado lo redireccionara a "/question page"
     useEffect(() => {
         if (store.user !== null) {
-            history.push("/question")
+            history.push("/userprofile")
         }
     }, [store.user]);
 
