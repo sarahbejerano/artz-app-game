@@ -45,6 +45,9 @@
     color: $color-bone;
     margin-bottom: 3vh;
     max-width: 80%;
+    .form-check-label {
+        text-transform: capitalize;
+    }
 }
 
 .form-check-input:checked {

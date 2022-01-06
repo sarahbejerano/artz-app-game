@@ -144,7 +144,7 @@ export const getArtMovementQuestion = (setStore) => {
                         image: imageUrl + correctAnswer.image_id + imageParams,
                         title: correctAnswer.style_title,
                     },
-                    questionPrompt: "Artistic movement?"
+                    questionPrompt: "Artistic Movement?"
                 }
             });
 

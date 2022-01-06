@@ -26,7 +26,7 @@ export const SignIn = () => {
     }
     useEffect(() => {
         if (store.user !== null) {
-            history.push("/userprofile")
+            history.push("/question")
         }
     }, [store.user]);
 
