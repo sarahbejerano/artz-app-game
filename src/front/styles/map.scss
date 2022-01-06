@@ -20,8 +20,8 @@
         position: absolute;
         font-size: 7vh;
         margin: 0;
-        top: 0;
-        left: 0;
+        top: 2vh;
+        left: 6vh;
         font-family: $primary-font;
         writing-mode: vertical-rl;
         text-orientation: upright;
@@ -37,20 +37,18 @@
 }
 
 .museumMapPage {
-    // justify-content: center;
-    // margin-bottom: 4vh;
     color: $color-charcoal;
     font-family: $primary-font;
     font-size: 4vh;
-    margin: auto;
-    // display: flex;
-    align-items: center;
-    justify-content: center;
-    // margin-bottom: 3vh;
-    margin-top: 3vh;
-    padding: 2vh;
     text-transform: uppercase;
-}
-img {
-    image-rendering: pixelated;
+
+    .mapImage {
+        image-rendering: pixelated;
+        padding: 6vh;
+        padding-top: 1vh;
+        padding-bottom: 2vh;
+        img {
+            width: 100%;
+        }
+    }
 }

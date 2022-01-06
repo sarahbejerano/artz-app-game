@@ -38,7 +38,7 @@ const elasticSearchParams =
 const encodedSearchParams = encodeURIComponent(JSON.stringify(elasticSearchParams));
 
 const getData = (uniqueProp) => {
-    return fetch("https://api.artic.edu/api/v1/artworks/search?limit=100&fields=artist_title,id,title,image_id,style_title,date_end&params=" + encodedSearchParams)
+    return fetch("https://api.artic.edu/api/v1/artworks/search?limit=100&fields=artist_title,id,title,image_id,style_title,date_end,place_of_origin&params=" + encodedSearchParams)
         .then(resp => resp.json())
         .then(data => {
             const answers = [data.data[randomNumber(data.data.length)]];
@@ -67,12 +67,15 @@ export const getAuthorQuestion = (setStore) => {
                 question: {
                     answers: answers.map(answer => {
                         return {
-                            objectID: answer.id, title: answer.artist_title,
+                            objectID: answer.id,
+                            title: answer.artist_title,
                         }
                     }),
                     correctAnswer: {
-                        objectID: correctAnswer.id, title: correctAnswer.artist_title,
+                        objectID: correctAnswer.id,
+                        title: correctAnswer.artist_title,
                         image: imageUrl + correctAnswer.image_id + imageParams,
+                        ...correctAnswer,
                     },
                     questionPrompt: "Who is the author?"
                 }
@@ -97,8 +100,9 @@ export const getPeriodQuestion = (setStore) => {
                         objectID: correctAnswer.id,
                         image: imageUrl + correctAnswer.image_id + imageParams,
                         title: correctAnswer.date_end,
+                        ...correctAnswer,
                     },
-                    questionPrompt: "What is the period?"
+                    questionPrompt: "What is the year?"
                 }
             });
 
@@ -120,6 +124,7 @@ export const getTitleQuestion = (setStore) => {
                         objectID: correctAnswer.id,
                         image: imageUrl + correctAnswer.image_id + imageParams,
                         title: correctAnswer.title,
+                        ...correctAnswer,
                     },
                     questionPrompt: "Which is the title?"
                 }
@@ -143,6 +148,7 @@ export const getArtMovementQuestion = (setStore) => {
                         objectID: correctAnswer.id,
                         image: imageUrl + correctAnswer.image_id + imageParams,
                         title: correctAnswer.style_title,
+                        ...correctAnswer,
                     },
                     questionPrompt: "Artistic Movement?"
                 }

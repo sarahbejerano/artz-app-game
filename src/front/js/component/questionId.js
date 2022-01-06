@@ -1,24 +1,26 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import { PageButton } from "../component/pageButton";
 import { Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "../../styles/questionId.scss";
 import { ProgressBar } from "../component/progressBar";
-
+import { DialogueModal } from '../component/dialogueModal'
 
 export const QuestionId = ({
     questionPrompt,
     answers,
     correctAnswer,
     onUserSubmit,
+    onQuit,
 }) => {
     const [selectedId, setSelectedId] = useState("");
     const onRadioChanged = (e) => {
         setSelectedId(e.target.value)
     }
+    const [modalShow, setModalShow] = React.useState(false);
     return (
         <Card className="cardQuestion">
-            <div className="imageContainer">
+            <div className="imageContainers">
                 <Card.Img
                     className="imageQuestion"
                     variant="top"
@@ -50,6 +52,15 @@ export const QuestionId = ({
                 </div>
                 <ProgressBar className="proBar" />
                 <Card.Footer className="footer">
+                    <PageButton text="quit" variant="secondary small"
+                        callback={() => { setModalShow(true) }}
+                    />
+                    <DialogueModal
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                        onQuit={onQuit}
+                    />
+
                     <PageButton text="next" variant="primary small" callback={() => { onUserSubmit(selectedId) }} />
                 </Card.Footer>
             </div>
@@ -65,5 +76,6 @@ QuestionId.propTypes = {
     answers: PropTypes.array,
     correctAnswer: PropTypes.object,
     onUserSubmit: PropTypes.func,
+    onQuit: PropTypes.func,
 
 };

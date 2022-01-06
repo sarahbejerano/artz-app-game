@@ -22,6 +22,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const { score } = getStore();
 				setStore({ score: score + 1 });
 			},
+			resetScore: () => {
+				setStore({ score: 0 });
+			},
 			createUserProfile: (email, password, profileName, avatarID) => {
 				const { saveUserToLocalStore } = getActions();
 				const auth = getAuth();

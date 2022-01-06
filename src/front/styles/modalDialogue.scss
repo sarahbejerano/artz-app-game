@@ -1,0 +1,35 @@
+@import "variables.scss";
+.modalDialogueContainer {
+    font-family: $primary-font;
+    text-transform: uppercase;
+
+    .modal-dialog {
+        max-width: 50vh;
+        max-height: 70vh;
+        margin: 1.75rem auto;
+        .modal-content {
+            background-color: $color-charcoal;
+            color: $color-bone;
+            border-radius: 0;
+            font-size: 5vh;
+            line-height: 5vh;
+            text-align: justify;
+            padding: 1vh;
+        }
+    }
+    .modal-header {
+        border-bottom: transparent;
+    }
+    .imageModalContainer {
+        img {
+            width: 100%;
+        }
+    }
+    .modal-footer {
+        border-top: transparent;
+        margin-top: -2vh;
+        .yesImSure {
+            margin-left: 2vh;
+        }
+    }
+}

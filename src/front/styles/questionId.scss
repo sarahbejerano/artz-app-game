@@ -1,83 +1,98 @@
 @import "variables.scss";
-
-.card {
-    background-color: $color-charcoal;
-    font-family: $primary-font;
-    border: 0;
-}
-
-.cardTitle {
-    text-align: center;
-    vertical-align: middle;
-    font-size: 6vh;
-    color: $color-bone;
-}
-.imageContainer {
-    height: 40vh;
-    margin-bottom: 2vh;
-    max-width: 80%;
-    margin: auto;
-}
-
-.imageQuestion {
-    display: block;
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    max-height: 40vh;
-}
-
-.form-check-input {
-    background-color: $color-fucsia;
-}
-
-.cardBody,
-.form-check-input {
-    text-align: left;
-    vertical-align: middle;
-}
-
-.answersBody {
-    font-size: 3vh;
-    margin-left: 6vh;
-    margin-top: -2vh;
-    color: $color-bone;
-    margin-bottom: 3vh;
-    max-width: 80%;
-    .form-check-label {
-        text-transform: capitalize;
+.questionBody {
+    .headerContainer {
+        display: flex;
+        justify-content: space-between;
+        padding: 2vh;
+        align-items: center;
     }
-}
+    .card {
+        background-color: $color-charcoal;
+        font-family: $primary-font;
+        border: 0;
+    }
 
-.form-check-input:checked {
-    background-color: $color-fucsia;
-    border-color: $color-fucsia;
-}
+    .cardTitle {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 6vh;
+        color: $color-bone;
+    }
+    .imageContainer {
+        height: 40vh;
+        margin-bottom: 2vh;
+        max-width: 80%;
+        margin: auto;
+    }
 
-.card-footer {
-    padding: 0;
-    background-color: $color-charcoal;
-    border-radius: 0;
-    border-top: 0;
-    text-align: center;
-    vertical-align: middle;
-}
+    .imageQuestion {
+        display: block;
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        max-height: 40vh;
+    }
 
-p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
+    .form-check-input {
+        background-color: $color-fucsia;
+    }
 
-.questionBody,
-.proBar {
-    text-align: center;
-    vertical-align: middle;
-    color: $color-bone;
-    font-size: 6vh;
-    width: 100%;
-}
-.card-body {
-    padding: 0;
-    margin-bottom: 1vh;
+    .cardBody,
+    .form-check-input {
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .answersBody {
+        font-size: 3vh;
+        margin-left: 6vh;
+        margin-top: -2vh;
+        color: $color-bone;
+        margin-bottom: 3vh;
+        max-width: 80%;
+        .form-check-label {
+            text-transform: capitalize;
+        }
+    }
+
+    .form-check-input:checked {
+        background-color: $color-fucsia;
+        border-color: $color-fucsia;
+    }
+
+    .card-footer {
+        padding: 0;
+        background-color: $color-charcoal;
+        border-radius: 0;
+        border-top: 0;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .questionBody,
+    .proBar {
+        text-align: center;
+        vertical-align: middle;
+        color: $color-bone;
+        font-size: 6vh;
+        width: 100%;
+    }
+    .card-body {
+        padding: 0;
+        margin-bottom: 1vh;
+    }
+    .footer {
+        display: flex;
+        justify-content: space-between;
+
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+    }
 }

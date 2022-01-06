@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import "../../styles/userProfile.scss";
-import { Link, useParams } from "react-router-dom";
+import PropTypes from "prop-types";
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import star from "../../img/star.png";
 import { avatars } from "../service/avatars";
-import { LinkButton } from "../component/linkButton";
+import { PageButton } from "../component/pageButton";
 
 
-export const UserProfile = () => {
+export const UserProfile = ({ onQuit, ...props }) => {
     const history = useHistory();
     const { store, actions } = useContext(Context);
     const params = useParams();
@@ -18,6 +19,11 @@ export const UserProfile = () => {
             history.push("/")
         }
     }, [store.user]);
+
+    const restartScore = () => {
+        actions.resetScore();
+        history.push("/")
+    };
 
     return (
         <div className="userProfileContainer">
@@ -31,11 +37,18 @@ export const UserProfile = () => {
             <div className="scoreplayer">{store.score}/10
             </div>
             <div className="buttonContainer">
-                <LinkButton text="finish" variant="secondary" link={"/"} />
+                <PageButton text="finish" variant="secondary"
+                    callback={() => { restartScore() }} />
             </div>
         </div>
 
     );
+};
+
+UserProfile.propTypes = {
+    onQuit: PropTypes.func,
+
+
 };
 
 
