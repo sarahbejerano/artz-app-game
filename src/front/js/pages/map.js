@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/map.scss";
-import { PageButton } from "../component/pageButton";
+import { LinkButton } from "../component/linkButton";
 import Map from "../../img/Map.png";
 
 
@@ -16,15 +16,11 @@ export const MuseumMap = () => {
                 <img src={Map} />
             </div>
             <div className="buttonContainer">
-                <PageButton text="next" variant="primary small" callback={() => { }} />
+                <LinkButton text="NEXT" variant="secondary small" link={"/question"} />
             </div>
         </div>
-
-
-
-
-
-
-
     );
 };
+
+
+

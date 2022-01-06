@@ -7,6 +7,7 @@ import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Title } from "./component/title";
 import { QuestionPage } from "./pages/question";
+import { IntroText } from "./pages/introText";
 import { CreateProfile } from "./pages/createProfile";
 import { MuseumMap } from "./pages/map";
 import { SignIn } from "./pages/signIn";
@@ -26,6 +27,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/question">
 							<QuestionPage />
+						</Route>
+						<Route exact path="/intro">
+							<IntroText />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />

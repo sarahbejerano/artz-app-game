@@ -20,7 +20,6 @@ export const QuestionPage = () => {
 
     const onUserSubmit = (selectedId) => {
         if (selectedId == store.question.correctAnswer.objectID) {
-            actions.getQuestion();
             actions.increaseScore();
         }
     }
