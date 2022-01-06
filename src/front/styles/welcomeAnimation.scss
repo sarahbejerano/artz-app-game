@@ -1,0 +1,30 @@
+@keyframes welcomeX {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -180vh;
+  }
+}
+
+@keyframes welcomeY {
+  from {
+    background-position-y: 0px;
+  }
+  to {
+    background-position-y: -75vh;
+  }
+}
+
+.welcome-animation {
+  animation:  welcomeX 0.5s steps(3) 3,
+              welcomeY 1s steps(2) 1;
+  animation-fill-mode: forwards, forwards;
+  background: url("Intro.png");
+  image-rendering: pixelated;
+  background-size: calc(240vh);
+  height: 0;
+  width: 60vh;
+  margin: 0 auto;
+  padding-bottom: 53.5%;
+}
