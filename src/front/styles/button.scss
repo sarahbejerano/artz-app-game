@@ -8,6 +8,7 @@
     height: 8.8vh;
     display: inline-block;
     margin: 0 0.8vh;
+    text-transform: uppercase;
 
     &.primary {
         .body {
@@ -58,6 +59,7 @@
             font-family: $primary-font;
             line-height: 8.8vh;
             color: $color-charcoal;
+            margin: 0 1vh;
         }
         &::after {
             position: absolute;

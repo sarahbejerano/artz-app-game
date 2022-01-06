@@ -21,6 +21,14 @@
                 padding: 0.65rem 0.75rem;
             }
         }
+        .form-control {
+            font-size: 4vh;
+            border-radius: 0;
+            &:focus {
+                border-color: transparent;
+                box-shadow: unset;
+            }
+        }
     }
     h2 {
         color: $color-bone;

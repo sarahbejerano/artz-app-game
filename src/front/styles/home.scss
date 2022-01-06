@@ -1,8 +1,22 @@
 @import "variables.scss";
-h1 {
-    font-family: $primary-font;
-}
 
-h1 {
-    color: $color-fucsia;
+.homeBody {
+    height: 75vh;
+    h1 {
+        font-family: $primary-font;
+        color: $color-fucsia;
+    }
+
+    .welcomeAnimation {
+        margin: 10vh auto;
+    }
+
+    .buttonContainer {
+        justify-content: space-evenly;
+        margin-top: 15vh;
+
+        &.last {
+            margin-top: 8vh;
+        }
+    }
 }
