@@ -18,17 +18,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getQuestion: () => {
 				questionsGenerators[randomNumber(questionsGenerators.length)](setStore);
 			},
-
-			answerQuestion: ({ id }) => {
-				const { favorites } = getStore();
-				const { [id]: remove, ...newFavorites } = favorites;
-				setStore({ favorites: newFavorites });
-			},
 			increaseScore: () => {
 				const { score } = getStore();
 				setStore({ score: score + 1 });
 			},
 			createUserProfile: (email, password, profileName, avatarID) => {
+				const { saveUserToLocalStore } = getActions();
 				const auth = getAuth();
 				createUserWithEmailAndPassword(auth, email, password)
 					.then((userCredential) => {
@@ -42,6 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then((profile) => {
 						setStore({ user: profile });
+						saveUserToLocalStore();
 					})
 					.catch((error) => {
 						console.log(error);
@@ -52,6 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			signInProfile: (email, password) => {
+				const { saveUserToLocalStore } = getActions();
 				const auth = getAuth();
 				signInWithEmailAndPassword(auth, email, password)
 					.then((userCredential) => {
@@ -62,6 +59,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(snapshot => {
 						setStore({ user: snapshot.data() });
+						saveUserToLocalStore();
 					})
 					.catch((error) => {
 						console.log(error);
@@ -69,6 +67,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 						const errorMessage = error.message;
 					});
 
+			},
+			loadUserFromLocalStore: () => {
+				const { user } = getStore();
+				if (!user) {
+					const profileName = localStorage.getItem('profileName');
+					const avatarID = localStorage.getItem('avatarID');
+					if (profileName && avatarID) {
+						setStore({
+							user: {
+								profileName: profileName,
+								avatarID: avatarID,
+							}
+						})
+					}
+				}
+			},
+			saveUserToLocalStore: () => {
+				const { user } = getStore();
+				if (user) {
+					localStorage.setItem('profileName', user.profileName);
+					localStorage.setItem('avatarID', user.avatarID);
+				}
 			}
 		}
 	};
