@@ -1,0 +1,61 @@
+@import "variables.scss";
+.modalInfoContainer {
+    font-family: $primary-font;
+    text-transform: uppercase;
+
+    .modal-dialog {
+        max-width: 50vh;
+        max-height: 70vh;
+        margin: 1.75rem auto;
+        .modal-content {
+            background-color: $color-bone;
+            border-radius: 0;
+        }
+    }
+    .modal-header {
+        border-bottom: transparent;
+    }
+    .imageModalContainer {
+        img {
+            width: 100%;
+        }
+    }
+    .modal-footer {
+        border-top: transparent;
+        margin-top: -2vh;
+    }
+    h7 {
+        padding-left: 1vh;
+        padding-bottom: 0.5vh;
+    }
+}
+
+// .modalContainer {
+//     color: $color-cyan;
+// }
+// .modal-content {
+//     background-color: $color-bone;
+//     border-radius: 0;
+//     font-family: $primary-font;
+//     text-transform: uppercase;
+//     border: 0;
+// }
+// .modal-header {
+//     border-bottom: 0vh;
+// }
+// .modal-footer {
+//     border-top: 0vh;
+// }
+
+// .container {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+// h1 {
+//     font-family: $primary-font;
+//     text-transform: uppercase;
+//     color: $color-fucsia;
+//     text-shadow: 0.2vh 0.2vh $color-cyan;
+//     font-size: 9vh;
+// }

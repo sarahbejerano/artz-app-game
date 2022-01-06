@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/map.scss";
 import { LinkButton } from "../component/linkButton";
 import Map from "../../img/Map.png";
-
+import { Title } from "../component/title";
 
 
 export const MuseumMap = () => {
@@ -11,6 +11,7 @@ export const MuseumMap = () => {
 
     return (
         <div className="museumMapPage">
+            <Title></Title>
             <div className="mapImage">
                 <h3 className="startAnimation">START</h3>
                 <img src={Map} />
