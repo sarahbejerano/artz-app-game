@@ -37,22 +37,30 @@ const elasticSearchParams =
 };
 const encodedSearchParams = encodeURIComponent(JSON.stringify(elasticSearchParams));
 
-const getData = () => {
+const getData = (uniqueProp) => {
     return fetch("https://api.artic.edu/api/v1/artworks/search?limit=100&fields=artist_title,id,title,image_id,style_title,date_end&params=" + encodedSearchParams)
         .then(resp => resp.json())
         .then(data => {
-            const answerOne = data.data[randomNumber(data.data.length)];
-            const answerTwo = data.data[randomNumber(data.data.length)];
-            const answerThree = data.data[randomNumber(data.data.length)];
+            const answers = [data.data[randomNumber(data.data.length)]];
+            while (answers.length < 3) {
+                const possibleAnswer = data.data[randomNumber(data.data.length)];
+                let validAnswer = true;
+                for (let i = 0; i < answers.length; i++) {
+                    if (possibleAnswer.id === answers[i].id || possibleAnswer[uniqueProp] === answers[i][uniqueProp]) {
+                        validAnswer = false;
+                    }
+                }
+                if (validAnswer) {
+                    answers.push(possibleAnswer);
+                }
+            }
 
-            return [
-                answerOne, answerTwo, answerThree,
-            ];
+            return answers;
         })
 };
 
 export const getAuthorQuestion = (setStore) => {
-    getData()
+    getData('artist_title')
         .then(answers => {
             const correctAnswer = answers[randomNumber(answers.length)];
             setStore({
@@ -75,7 +83,7 @@ export const getAuthorQuestion = (setStore) => {
 };
 
 export const getPeriodQuestion = (setStore) => {
-    getData()
+    getData('date_end')
         .then(answers => {
             const correctAnswer = answers[randomNumber(answers.length)];
             setStore({
@@ -98,7 +106,7 @@ export const getPeriodQuestion = (setStore) => {
         .catch(error => console.log("Error loading message from backend", error))
 };
 export const getTitleQuestion = (setStore) => {
-    getData()
+    getData('title')
         .then(answers => {
             const correctAnswer = answers[randomNumber(answers.length)];
             setStore({
@@ -121,7 +129,7 @@ export const getTitleQuestion = (setStore) => {
         .catch(error => console.log("Error loading message from backend", error))
 };
 export const getArtMovementQuestion = (setStore) => {
-    getData()
+    getData('style_title')
         .then(answers => {
             const correctAnswer = answers[randomNumber(answers.length)];
             setStore({
