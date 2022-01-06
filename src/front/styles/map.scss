@@ -37,8 +37,19 @@
 }
 
 .museumMapPage {
+    // justify-content: center;
+    // margin-bottom: 4vh;
+    color: $color-charcoal;
+    font-family: $primary-font;
+    font-size: 4vh;
+    margin: auto;
+    // display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 4vh;
+    // margin-bottom: 3vh;
+    margin-top: 3vh;
+    padding: 2vh;
+    text-transform: uppercase;
 }
 img {
     image-rendering: pixelated;
