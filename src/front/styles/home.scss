@@ -8,15 +8,26 @@
     }
 
     .welcomeAnimation {
-        margin: 5vh auto;
+        margin: 2vh auto;
+        @media only screen and (min-width: $small-media-query) {
+            margin: 5vh auto;
+        }
     }
 
     .buttonContainer {
         justify-content: space-evenly;
-        margin-top: 15vh;
+
+        margin-top: 8vh;
 
         &.last {
-            margin-top: 8vh;
+            margin-top: 10vh;
+        }
+        @media only screen and (min-width: $small-media-query) {
+            margin-top: 15vh;
+
+            &.last {
+                margin-top: 8vh;
+            }
         }
     }
 }
