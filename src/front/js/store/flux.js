@@ -38,8 +38,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 							avatarID: avatarID,
 						});
 					})
-					.then((profile) => {
-						setStore({ user: profile });
+					.then(() => {
+						setStore({
+							user: {
+								profileName: profileName,
+								avatarID: avatarID,
+							}
+						});
 						saveUserToLocalStore();
 					})
 					.catch((error) => {
