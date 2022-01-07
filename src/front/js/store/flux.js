@@ -1,6 +1,6 @@
 
 import { getAuthorQuestion, getPeriodQuestion, getTitleQuestion, getArtMovementQuestion } from '../service/questionGenerator';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { doc, setDoc, getFirestore, getDoc } from "firebase/firestore";
 
 const randomNumber = (limit) => Math.floor(Math.random() * limit);
@@ -55,7 +55,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const auth = getAuth();
 				signInWithEmailAndPassword(auth, email, password)
 					.then((userCredential) => {
-						console.log("usuario");
 						const user = userCredential.user;
 						const db = getFirestore();
 						return getDoc(doc(db, "profiles", user.uid));
@@ -63,6 +62,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(snapshot => {
 						setStore({ user: snapshot.data() });
 						saveUserToLocalStore();
+					})
+					.catch((error) => {
+						console.log(error);
+						const errorCode = error.code;
+						const errorMessage = error.message;
+					});
+
+			},
+			signOut: () => {
+				const auth = getAuth();
+				signOut(auth)
+					.then(() => {
+						setStore({ user: null });
+						localStorage.removeItem('profileName');
+						localStorage.removeItem('avatarID');
 					})
 					.catch((error) => {
 						console.log(error);
