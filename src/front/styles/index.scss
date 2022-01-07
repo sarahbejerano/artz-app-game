@@ -1,7 +1,12 @@
 @import "variables.scss";
-body,
 html {
+	height: -webkit-fill-available;
+}
+body {
 	background-color: $color-charcoal;
+	height: 100vh;
+	/* mobile viewport bug fix */
+	height: -webkit-fill-available;
 }
 
 #app {
@@ -21,11 +26,15 @@ input[type="reset"] {
 }
 
 .appContainer {
-	width: 70vh;
+	width: 50vh;
 	margin: 0 auto;
 	border: 0.1vh solid $color-charcoal;
 	box-shadow: 0 0 0.3vh 0.3vh black;
 	height: 100vh;
+	max-height: -webkit-fill-available;
+	@media only screen and (min-width: $small-media-query) {
+		width: 70vh;
+	}
 }
 img {
 	image-rendering: pixelated;

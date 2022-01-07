@@ -19,10 +19,13 @@
         color: $color-bone;
     }
     .imageContainer {
-        height: 40vh;
+        height: 34vh;
         margin-bottom: 2vh;
         max-width: 80%;
         margin: auto;
+        @media only screen and (min-width: $small-media-query) {
+            height: 40vh;
+        }
     }
 
     .imageQuestion {

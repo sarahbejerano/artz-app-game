@@ -3,8 +3,8 @@
 .createProfilePage {
     .mb-3 {
         font-family: $primary-font;
-        width: 50vh;
-        height: 8vh;
+        width: 80%;
+        height: 6vh;
         align-content: center;
         margin: auto;
         border-radius: 0;
@@ -14,8 +14,13 @@
             }
         }
         .form-control {
-            font-size: 4vh;
+            font-size: 3vh;
             border-radius: 0;
+            height: 5vh;
+            @media only screen and (min-width: $small-media-query) {
+                font-size: 4vh;
+                height: 6vh;
+            }
             &:focus {
                 border-color: transparent;
                 box-shadow: unset;
@@ -41,9 +46,11 @@
                 text-align: center;
                 margin-bottom: 1vh;
                 img {
-                    // transform: scale(1.5);
                     border: 0.5vh solid transparent;
-                    height: 13vh;
+                    height: 9vh;
+                    @media only screen and (min-width: $small-media-query) {
+                        height: 13vh;
+                    }
                 }
                 &.selected {
                     img {

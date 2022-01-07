@@ -20,7 +20,7 @@ export const QuestionId = ({
     const [modalShow, setModalShow] = React.useState(false);
     return (
         <Card className="cardQuestion">
-            <div className="imageContainers">
+            <div className="imageContainer">
                 <Card.Img
                     className="imageQuestion"
                     variant="top"

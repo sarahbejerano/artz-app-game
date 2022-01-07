@@ -21,7 +21,7 @@
         font-size: 7vh;
         margin: 0;
         top: 2vh;
-        left: 6vh;
+        left: 4vh;
         font-family: $primary-font;
         writing-mode: vertical-rl;
         text-orientation: upright;
@@ -33,6 +33,9 @@
         animation-iteration-count: infinite;
         overflow: hidden;
         height: 0vh;
+        @media only screen and (min-width: $small-media-query) {
+            left: 6vh;
+        }
     }
 }
 

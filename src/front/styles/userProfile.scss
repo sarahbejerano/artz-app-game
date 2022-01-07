@@ -2,20 +2,20 @@
 
 @keyframes starAnimation {
     from {
-        transform: scale3d(0.6, 0.6, 0.6);
+        transform: scale3d(1, 1, 1);
     }
     to {
-        transform: scale3d(0, 0.6, 0.6);
+        transform: scale3d(0, 1, 1);
     }
 }
 
 .userProfileContainer {
     .pointsStar {
         filter: drop-shadow(0.6vh 0.4vh 0 $color-bone);
-        transform: scale(0.6);
         display: flex;
         margin: auto;
         animation: starAnimation 0.7s infinite alternate;
+        width: 50%;
     }
     .nameProfile {
         color: $color-bone;
@@ -24,7 +24,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: -6vh;
     }
     .avatarProfile {
         display: flex;
@@ -43,7 +42,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: -8vh;
         margin-bottom: 3vh;
     }
 }

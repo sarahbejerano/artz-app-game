@@ -5,6 +5,7 @@ import "../../styles/createProfile.scss";
 import { PageButton } from "../component/pageButton";
 import validator from "validator";
 import { avatars } from "../service/avatars";
+import { Title } from "../component/title";
 
 export const CreateProfile = () => {
     const history = useHistory();
@@ -40,6 +41,7 @@ export const CreateProfile = () => {
 
     return (
         <div className="createProfilePage">
+            <Title />
             <h2>CREATE PROFILE</h2>
             <div className="form-floating mb-3">
                 <input
