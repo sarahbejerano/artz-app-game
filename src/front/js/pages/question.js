@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.scss";
@@ -11,6 +11,9 @@ import { avatars } from "../service/avatars";
 export const QuestionPage = () => {
     const history = useHistory();
     const { store, actions } = useContext(Context);
+    const [showIncorrect, setShowIncorrect] = useState(false);
+    const [incorrectId, setIncorrectId] = useState(null);
+
     useEffect(() => {
         if (store.score < 10) {
             actions.getQuestion();
@@ -22,10 +25,18 @@ export const QuestionPage = () => {
     }, [store.score]);
 
     const onUserSubmit = (selectedId) => {
+        setShowIncorrect(false);
+        setIncorrectId(null);
         if (selectedId == store.question.correctAnswer.objectID) {
             actions.increaseScore();
-        }
+        } else {
+            setIncorrectId(selectedId)
+        };
     }
+    useEffect(() => {
+        setShowIncorrect(true)
+    }, [showIncorrect]);
+
     const onQuit = () => {
         actions.resetScore();
         history.push("/");
@@ -66,6 +77,8 @@ export const QuestionPage = () => {
                     correctAnswer={store.question.correctAnswer}
                     onUserSubmit={onUserSubmit}
                     onQuit={onQuit}
+                    showIncorrect={showIncorrect}
+                    incorrectId={incorrectId}
                 />
             )}
         </div>

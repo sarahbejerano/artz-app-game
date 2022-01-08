@@ -12,6 +12,8 @@ export const QuestionId = ({
     correctAnswer,
     onUserSubmit,
     onQuit,
+    showIncorrect,
+    incorrectId,
 }) => {
     const [selectedId, setSelectedId] = useState("");
     const onRadioChanged = (e) => {
@@ -43,7 +45,7 @@ export const QuestionId = ({
                                 value={answer.objectID}
                                 onChange={onRadioChanged}
                                 checked={selectedId == answer.objectID} />
-                            <label className="form-check-label" htmlFor={"flexRadioDefault" + index}>
+                            <label className={`form-check-label ${(showIncorrect && incorrectId == answer.objectID) ? "incorrect" : ""}`} htmlFor={"flexRadioDefault" + index}>
                                 {answer.title}
                             </label>
                         </div>;
@@ -77,5 +79,7 @@ QuestionId.propTypes = {
     correctAnswer: PropTypes.object,
     onUserSubmit: PropTypes.func,
     onQuit: PropTypes.func,
+    showIncorrect: PropTypes.bool,
+    incorrectId: PropTypes.string,
 
 };
