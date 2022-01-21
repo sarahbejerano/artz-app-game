@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/signIn.scss";
 import { PageButton } from "../component/pageButton";
-import { Title } from "../component/title";
+
 
 
 
@@ -33,7 +33,7 @@ export const SignIn = () => {
 
     return (
         <div className="signInPage">
-            <Title />
+
             <h2>SIGN IN</h2>
             <div className="form-floating mb-3">
                 <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"

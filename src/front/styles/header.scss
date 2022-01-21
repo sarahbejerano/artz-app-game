@@ -1,0 +1,44 @@
+@import "variables.scss";
+
+.navBarStyle {
+    background-color: transparent;
+    font-family: $primary-font;
+    font-size: 3em;
+
+    .divider {
+        color: $color-red;
+        display: none;
+        align-items: center;
+        margin: 0 2px;
+        @media only screen and (min-width: $small-media-query) {
+            display: flex;
+        }
+    }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $color-red;
+}
+.logo {
+    width: 100px;
+    height: 77px;
+    @media only screen and (min-width: $small-media-query) {
+        width: 200px;
+        height: 152px;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .show > .nav-link {
+    transform: translateY(-8px);
+    color: $color-red;
+    transition: transform 0.25s;
+}
+
+.navbar-light .navbar-nav .nav-link.active,
+.navbar-light .navbar-nav.nav-link .nav-link.active {
+    color: $color-red;
+    transform: none;
+    transition: none;
+    // text-decoration: underline;
+}
