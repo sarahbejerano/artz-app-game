@@ -11,7 +11,9 @@ export const Home = () => {
 		actions.signOut();
 	}
 	return (
-
+		// <div className="pageHeader">
+		// 	Header
+		// </div>
 		<div className="homeBody">
 			<Title></Title>
 			<WelcomeAnimation className="welcomeAnimation" />

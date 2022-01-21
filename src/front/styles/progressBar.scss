@@ -6,7 +6,7 @@
     align-items: center;
     height: 5.4vh;
     width: 80%;
-    border: 0.4vh solid $color-fucsia;
+    border: 0.4vh solid $color-red;
     position: relative;
     box-sizing: border-box;
     margin: 0 auto;
@@ -18,7 +18,7 @@
         width: 0.4vh;
         height: 4.2vh;
         content: "";
-        background-color: $color-fucsia;
+        background-color: $color-red;
     }
     &::before {
         position: absolute;
@@ -27,18 +27,18 @@
         width: 0.4vh;
         height: 4.2vh;
         content: "";
-        background-color: $color-fucsia;
+        background-color: $color-red;
     }
 
     .inner {
-        background-color: $color-cyan;
+        background-color: $color-green;
         height: 4.6vh;
         width: 25vh;
         transition: width 100ms ease-out;
     }
 }
 .progressBarStyle {
-    color: $color-cyan;
+    color: $color-green;
     font-size: 3vh;
 
     h2 {

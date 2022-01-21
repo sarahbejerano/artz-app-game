@@ -25,17 +25,17 @@ input[type="reset"] {
 	outline: inherit;
 }
 
-.appContainer {
-	width: 50vh;
-	margin: 0 auto;
-	border: 0.1vh solid $color-charcoal;
-	box-shadow: 0 0 0.3vh 0.3vh black;
-	height: 100vh;
-	max-height: -webkit-fill-available;
-	@media only screen and (min-width: $small-media-query) {
-		width: 70vh;
-	}
-}
+// .appContainer {
+// 	width: 50vh;
+// 	margin: 0 auto;
+// 	border: 0.1vh solid $color-charcoal;
+// 	box-shadow: 0 0 0.3vh 0.3vh black;
+// 	height: 100vh;
+// 	max-height: -webkit-fill-available;
+// 	@media only screen and (min-width: $small-media-query) {
+// 		width: 70vh;
+// 	}
+// }
 img {
 	image-rendering: pixelated;
 }

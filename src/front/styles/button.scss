@@ -12,22 +12,22 @@
 
     &.primary {
         .body {
-            background-color: $color-cyan;
-            box-shadow: 0.4vh 0.4vh 0 0 $color-fucsia;
+            background-color: $color-green;
+            box-shadow: 0.4vh 0.4vh 0 0 $color-red;
         }
     }
 
     &.secondary {
         .body {
             background-color: $color-bone;
-            box-shadow: 0.4vh 0.4vh 0 0 $color-cyan;
+            box-shadow: 0.4vh 0.4vh 0 0 $color-green;
 
             &::before {
                 background-color: $color-bone;
             }
             &::after {
                 background-color: $color-bone;
-                box-shadow: 0.4vh 0.4vh 0 0 $color-cyan;
+                box-shadow: 0.4vh 0.4vh 0 0 $color-green;
             }
         }
     }
@@ -68,8 +68,8 @@
             width: 0.4vh;
             height: 8vh;
             content: "";
-            background-color: $color-cyan;
-            box-shadow: 0.4vh 0.4vh 0 0 $color-fucsia;
+            background-color: $color-green;
+            box-shadow: 0.4vh 0.4vh 0 0 $color-red;
         }
 
         &::before {
@@ -79,18 +79,18 @@
             width: 0.4vh;
             height: 8vh;
             content: "";
-            background-color: $color-cyan;
+            background-color: $color-green;
         }
 
         &:active {
             box-shadow: none;
-            color: $color-fucsia;
+            color: $color-red;
             transform: translate(0.4vh, 0.4vh);
             &::after {
                 box-shadow: none;
             }
             .text {
-                color: $color-fucsia;
+                color: $color-red;
             }
         }
     }
