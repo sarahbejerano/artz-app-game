@@ -13,7 +13,7 @@ export const Home = () => {
 	return (
 		<div className="homePage">
 			<PageHeader />
+			<h1>A learning platform about art</h1>
 		</div>
-
 	);
 };
