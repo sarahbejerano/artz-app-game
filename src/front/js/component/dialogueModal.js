@@ -19,7 +19,6 @@ export const DialogueModal = ({ onQuit, ...props }) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-
                 <div className="textModalContainer">
                     Are you sure you
                     want to sleep

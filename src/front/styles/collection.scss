@@ -1,0 +1,15 @@
+@import "variables.scss";
+
+.collectionPageContainer {
+    font-family: $primary-font;
+    background-color: $color-charcoal;
+    min-height: 100%;
+    padding: 0 30px;
+    .cardRow {
+        display: flex;
+        justify-content: space-between;
+    }
+    .cardColumn {
+        margin-bottom: 20px;
+    }
+}
