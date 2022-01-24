@@ -14,6 +14,11 @@
             display: flex;
         }
     }
+    // .navbar-expand-md .navbar-collapse {
+    //     display: flex !important;
+    //     flex-basis: auto;
+    //     margin-right: 40px;
+    // }
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -40,4 +45,5 @@
     color: $color-red;
     transform: none;
     transition: none;
+    opacity: 0.5;
 }

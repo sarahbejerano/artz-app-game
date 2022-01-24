@@ -1,7 +1,8 @@
+@import "variables.scss";
 html,
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     min-height: 100% !important;
     height: 100%;
     font-size: 16px;
@@ -10,4 +11,10 @@ body {
 #app {
     min-height: 100% !important;
     height: 100%;
+    padding: 0;
+    background-color: $color-charcoal;
 }
+// .layoutBody {
+//     height: 100%;
+//     margin: 0 20px;
+// }
