@@ -4,6 +4,8 @@ import ScrollToTop from "./component/scrollToTop";
 import injectContext from "./store/appContext";
 import { Home } from "./pages/home";
 import { CollectionPage } from "./pages/collection";
+import { CollectionDetail } from "./component/collectionDetail";
+
 // import { QuestionPage } from "./pages/question";
 // import { CreateProfile } from "./pages/createProfile";
 // import { SignIn } from "./pages/signIn";
@@ -31,6 +33,9 @@ const Layout = () => {
 						</Route> */}
 						<Route exact path="/collection">
 							<CollectionPage />
+						</Route>
+						<Route path="/detail/:style">
+							<CollectionDetail />
 						</Route>
 						{/* <Route exact path="/userprofile">
 							<UserProfile />
