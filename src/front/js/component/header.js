@@ -7,7 +7,7 @@ import Logo from "../../img/logo-ok.png";
 export const PageHeader = () => {
     return (
         <Navbar className="navBarStyle" expand="md">
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
                 <img
                     alt=""
                     src={Logo}

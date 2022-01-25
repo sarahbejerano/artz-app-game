@@ -1,0 +1,24 @@
+@import "variables.scss";
+.collectionPageDetailContainer {
+    font-family: $primary-font;
+    color: $color-bone;
+    background-color: $color-charcoal;
+    min-height: 100%;
+    padding: 0 30px;
+    .cardRow {
+        display: flex;
+        justify-content: space-between;
+    }
+    .cardColumn {
+        margin-bottom: 20px;
+    }
+    .detailText {
+        font-family: $secondary-font;
+        margin-bottom: 20px;
+        .modernismLink {
+            color: $color-bone;
+            text-decoration: underline;
+            font-weight: bolder;
+        }
+    }
+}

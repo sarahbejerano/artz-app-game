@@ -7,7 +7,7 @@ import { Context } from "../store/appContext";
 import "../../styles/card.scss";
 
 
-export const CollectionCard = ({ url, image, title }) => {
+export const CollectionCard = ({ url, image, title, year }) => {
     const { store } = useContext(Context);
 
     return (
@@ -20,6 +20,7 @@ export const CollectionCard = ({ url, image, title }) => {
                 />
                 <Card.Body className="cardBody">
                     <Card.Title className="cardTitle">{title}
+                        <Card.Text>{year}</Card.Text>
                     </Card.Title>
                 </Card.Body>
             </Card>
@@ -32,4 +33,5 @@ CollectionCard.propTypes = {
     url: PropTypes.string,
     image: PropTypes.string,
     title: PropTypes.string,
+    year: PropTypes.string
 };

@@ -2,29 +2,14 @@ import React, { useContext, useState, useEffect } from "react";
 // import validator from "validator";
 // import { useHistory } from "react-router-dom";
 // import { Context } from "../store/appContext";
-// import { PageButton } from "../component/pageButton";
 // import useSWR from "swr";
 import { PageHeader } from "../component/header";
 import { CollectionCard } from "../component/card";
-import { Row, Col, Container, Carousel, Navbar } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
 import "../../styles/collection.scss";
 
 
 export const CollectionPage = () => {
-    // const history = useHistory();
-    // const { store, actions } = useContext(Context);
-    // const params = useParams();
-
-    // useEffect(() => {
-    //     if (store.user === null) {
-    //         history.push("/")
-    //     }
-    // }, [store.user]);
-
-    // const restartScore = () => {
-    //     actions.resetScore();
-    //     history.push("/")
-    // };
 
     return (
         <>
@@ -33,7 +18,7 @@ export const CollectionPage = () => {
                 <Row xs={1} md={4} className="cardRow">
                     {Array.from({ length: 8 }).map((_, idx) => (
                         <Col className="cardColumn">
-                            <CollectionCard url="/modernism" title="Modernism" image="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/6/18/1434647790018/d0bb6745-5cbe-4f5a-993d-4c9b25ab86b8-2060x1479.jpeg?width=465&quality=45&auto=format&fit=max&dpr=2&s=446f767582a2c8b288be76dd1113a62a" />
+                            <CollectionCard url="/detail/modernism" title="Modernism" year="1910" image="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/6/18/1434647790018/d0bb6745-5cbe-4f5a-993d-4c9b25ab86b8-2060x1479.jpeg?width=465&quality=45&auto=format&fit=max&dpr=2&s=446f767582a2c8b288be76dd1113a62a" />
                         </Col>
                     ))}
                 </Row>
