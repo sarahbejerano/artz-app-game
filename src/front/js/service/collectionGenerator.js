@@ -94,7 +94,33 @@ export const ArtPeriods = [
             }
         ],
     },
-
+    {
+        title: "Abstract",
+        text: "Abstract art is art that does not attempt to represent an accurate depiction of a visual reality but instead use shapes, colours, forms and gestural marks to achieve its effect. Strictly speaking, the word abstract means to separate or withdraw something from something else. The term can be applied to art that is based an object, figure or landscape, where forms have been simplified or schematised. It is also applied to art that uses forms, such as geometric shapes or gestural marks, which have no source at all in an external visual reality.Some artists of this pure abstraction have preferred terms such as concrete art or non- objective art, but in practice the word abstract is used across the board and the distinction between the two is not always obvious. Abstract art is often seen as carrying a moral dimension, in that it can be seen to stand for virtues such as order, purity, simplicity and spirituality.",
+        year: "1900",
+        artworks: [
+            {
+                id: 77615,
+                image_url: "https://www.artic.edu/iiif/2/7bd4542d-3e84-e21a-d259-8d22e20bee0a/full/843,/0/default.jpg"
+            },
+            {
+                id: 14487,
+                image_url: "https://www.artic.edu/iiif/2/9f670fbc-368f-e785-37fd-726ba765db1e/full/843,/0/default.jpg"
+            },
+            {
+                id: 70125,
+                image_url: "https://www.artic.edu/iiif/2/524206a7-fb35-70d9-4b37-a0b7ac563be6/full/843,/0/default.jpg"
+            },
+            {
+                id: 79598,
+                image_url: "https://www.artic.edu/iiif/2/f8715f4b-1a10-4e55-d7a9-2d80d1d76f4a/full/843,/0/default.jpg"
+            },
+            {
+                id: 76244,
+                image_url: "https://www.artic.edu/iiif/2/6e72d851-0c15-978f-d0cf-0eadb94c0cf9/full/843,/0/default.jpg"
+            },
+        ],
+    },
     {
         title: "Cubism",
         text: "Cubism was a revolutionary new approach to representing reality invented in around 1907 by artists Pablo Picasso and Georges Braque. They brought different views of subjects (usually objects or figures) together in the same picture, resulting in paintings that appear fragmented and abstracted. Cubism was one of the most influential styles of the twentieth century. It is generally agreed to have begun around 1907 with Picasso celebrated painting Demoiselles DAvignon which included elements of cubist style.  Cubism opened up almost infinite new possibilities for the treatment of visual reality in art and was the starting point for many later abstract styles including constructivism and neo- plasticism.By breaking objects and figures down into distinct areas the artists aimed to show different viewpoints at the same time and within the same space and so suggest their three dimensional form.In doing so they also emphasized the two- dimensional flatness of the canvas instead of creating the illusion of depth.This marked a revolutionary break with the European tradition of creating the illusion of real space from a fixed viewpoint using devices such as linear perspective, which had dominated representation from the Renaissance onwards.Cubism was partly influenced by the late work of artist Paul Cézanne in which he can be seen to be painting things from slightly different points of view.",
@@ -124,33 +150,7 @@ export const ArtPeriods = [
 
     },
 
-    {
-        title: "Abstract",
-        text: "Abstract art is art that does not attempt to represent an accurate depiction of a visual reality but instead use shapes, colours, forms and gestural marks to achieve its effect. Strictly speaking, the word abstract means to separate or withdraw something from something else. The term can be applied to art that is based an object, figure or landscape, where forms have been simplified or schematised. It is also applied to art that uses forms, such as geometric shapes or gestural marks, which have no source at all in an external visual reality.Some artists of this pure abstraction have preferred terms such as concrete art or non- objective art, but in practice the word abstract is used across the board and the distinction between the two is not always obvious. Abstract art is often seen as carrying a moral dimension, in that it can be seen to stand for virtues such as order, purity, simplicity and spirituality.",
-        year: "1900",
-        artworks: [
-            {
-                id: 77615,
-                image_url: "https://www.artic.edu/iiif/2/7bd4542d-3e84-e21a-d259-8d22e20bee0a/full/843,/0/default.jpg"
-            },
-            {
-                id: 14487,
-                image_url: "https://www.artic.edu/iiif/2/9f670fbc-368f-e785-37fd-726ba765db1e/full/843,/0/default.jpg"
-            },
-            {
-                id: 70125,
-                image_url: "https://www.artic.edu/iiif/2/524206a7-fb35-70d9-4b37-a0b7ac563be6/full/843,/0/default.jpg"
-            },
-            {
-                id: 79598,
-                image_url: "https://www.artic.edu/iiif/2/f8715f4b-1a10-4e55-d7a9-2d80d1d76f4a/full/843,/0/default.jpg"
-            },
-            {
-                id: 76244,
-                image_url: "https://www.artic.edu/iiif/2/6e72d851-0c15-978f-d0cf-0eadb94c0cf9/full/843,/0/default.jpg"
-            },
-        ],
-    },
+
     {
         title: "Surrealism",
         text: "Surrealism is a  twentieth-century literary, philosophical and artistic movement that explored the workings of the mind, championing the irrational, the poetic and the revolutionary.The movement aspiration towards the liberation of the mind as well as the liberation of artistic expressions has also meant seeking political freedom. In many instances, these artists have turned to political activism. In this way, the revolutionary concepts encouraged by Surrealism has led the movement to be seen as a way of life.Surrealism aims to revolutionise human experience. It balances a rational vision of life with one that asserts the power of the unconscious and dreams. The movement artists find magic and strange beauty in the unexpected and the uncanny, the disregarded and the unconventional. At the core of their work is the willingness to challenge imposed values and norms, and a search for freedom.",
