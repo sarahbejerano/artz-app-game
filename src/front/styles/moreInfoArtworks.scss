@@ -1,0 +1,14 @@
+@import "variables.scss";
+
+.InfoArtworksBody {
+    font-family: $primary-font;
+
+    .one {
+        background-color: $color-green;
+        width: 40%;
+        color: $color-bone;
+    }
+    .two {
+        width: 50%;
+    }
+}

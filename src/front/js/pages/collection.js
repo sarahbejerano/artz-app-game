@@ -2,11 +2,35 @@ import React, { useContext, useState, useEffect } from "react";
 import { PageHeader } from "../component/header";
 import { CollectionCard } from "../component/card";
 import { Row, Col } from "react-bootstrap"
+import { useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
 import "../../styles/collection.scss";
 import { ArtPeriods } from "../service/collectionGenerator";
 
+const randomNumber = (limit) => Math.floor(Math.random() * limit);
 
 export const CollectionPage = () => {
+    const { store, actions } = useContext(Context)
+
+    useEffect(() => {
+        ArtPeriods.forEach((artPeriod, idx) => {
+            if (!store.artworks[artPeriod.title]) {
+                actions.getArtworksForPeriod(artPeriod.artworksQuery,
+                    artPeriod.title);
+            }
+        });
+    }, []);
+
+    const getImage = (artPeriod) => {
+        if (store.artworks[artPeriod.title]) {
+            const artworksForCurrentPeriod = store.artworks[artPeriod.title];
+            const imageIndex = randomNumber(artworksForCurrentPeriod.length);
+
+            return store.artworks[artPeriod.title][imageIndex].imageUrl;
+        }
+        return null;
+    };
+
 
     return (
         <>
@@ -15,7 +39,12 @@ export const CollectionPage = () => {
                 <Row xs={1} md={3} className="cardRow">
                     {ArtPeriods.map((artPeriod, idx) => (
                         <Col key={idx} className="cardColumn">
-                            <CollectionCard url={"/detail/" + idx} title={artPeriod.title} year={artPeriod.year} image={artPeriod.artworks[0].image_url} />
+                            <CollectionCard
+                                url={"/detail/" + idx}
+                                title={artPeriod.title}
+                                year={artPeriod.year}
+                                image={getImage(artPeriod)}
+                            />
                         </Col>
                     ))}
                 </Row>

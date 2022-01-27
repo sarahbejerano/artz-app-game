@@ -5,6 +5,7 @@ import injectContext from "./store/appContext";
 import { Home } from "./pages/home";
 import { CollectionPage } from "./pages/collection";
 import { CollectionDetail } from "./component/collectionDetail";
+import { InfoArtworks } from "./pages/moreInfoArtwork";
 
 // import { QuestionPage } from "./pages/question";
 // import { CreateProfile } from "./pages/createProfile";
@@ -37,9 +38,9 @@ const Layout = () => {
 						<Route path="/detail/:style">
 							<CollectionDetail />
 						</Route>
-						{/* <Route exact path="/userprofile">
-							<UserProfile />
-						</Route> */}
+						<Route exact path="/infoartwork">
+							<InfoArtworks />
+						</Route>
 					</Switch>
 				</ScrollToTop>
 			</BrowserRouter >
