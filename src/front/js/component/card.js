@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom"
@@ -18,9 +19,9 @@ export const CollectionCard = ({ url, image, title, year, artist }) => {
                 />
                 <Card.Body className="cardBody">
                     <Card.Title className="cardTitle">{title}
-                        <Card.Text>{year}</Card.Text>
-                        <Card.Text>{artist}</Card.Text>
+                        <Card.Text className="cardYear">{year}</Card.Text>
                     </Card.Title>
+                    <Card.Text className="cardArtist">{artist}</Card.Text>
                 </Card.Body>
             </Card>
         </Link>
