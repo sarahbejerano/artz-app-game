@@ -1,5 +1,6 @@
 
-import { getAuthorQuestion, getPeriodQuestion, getTitleQuestion, getArtMovementQuestion } from '../service/questionGenerator';
+import { getAuthorQuestion, getPeriodQuestion, getTitleQuestion, getArtMovementQuestion, } from '../service/questionGenerator';
+import { getArtworks } from '../service/cardContentGenerator'
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { doc, setDoc, getFirestore, getDoc } from "firebase/firestore";
 
@@ -13,10 +14,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 			score: 0,
 			question: null,
 			user: null,
+			artworks: {},
 		},
 		actions: {
 			getQuestion: () => {
 				questionsGenerators[randomNumber(questionsGenerators.length)](setStore);
+			},
+			getArtworksForPeriod: (query, period) => {
+				getArtworks(query)
+					.then((newArtworks) => {
+						const { artworks } = getStore();
+						setStore({
+							artworks: {
+								...artworks,
+								[period]: newArtworks,
+							}
+						});
+					});
 			},
 			increaseScore: () => {
 				const { score } = getStore();
