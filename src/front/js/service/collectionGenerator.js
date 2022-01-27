@@ -72,6 +72,76 @@ export const ArtPeriods = [
 
     },
     {
+        title: "Realism",
+        text: "  was a term coined by the French novelist Champfleury in the 1840s and art was exemplified in the work of his friend the painter Gustav Courbet. In practice, realist subject matter meant scenes of peasant and working-class life, the life of the city streets, cafes, and popular entertainments, and an increasing frankness in the treatment of the body and sexual subjects. The term generally implies a certain grittiness in the choice of subject. Such subject matter combined with the new naturalism of treatment caused shock among the predominantly upper and middle-class audiences for art.",
+        year: "1840",
+        artworksQuery:
+        {
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+                            "match": {
+                                "artwork_type_title": "Painting"
+                            }
+                        },
+                        {
+                            "match": {
+                                "style_title": "Realism"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "id"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "artist_title"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "image_id"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "place_of_origin"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "title"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "date_end"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "medium_display"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "dimensions"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "style_title"
+                            }
+                        },
+                    ]
+                }
+            }
+        }
+
+    },
+    {
         title: "Impressionism",
         text: " developed in France in the nineteenth century and is based on the practice of painting out of doors and spontaneously on the spot rather than in a studio from sketches. Main impressionist subjects were landscapes and scenes of everyday life. Impressionism was developed by Claude Monet and other Paris-based artists from the early 1860s. (Though the process of painting on the spot can be said to have been pioneered in Britain by John Constable in around 1813 to 1817 through his desire to paint nature in a realistic way).Instead of painting in a studio, the impressionists found that they could capture the momentary and transient effects of sunlight by working quickly, in front of their subjects, in the open air (en plein air) rather than in a studio. This resulted in a greater awareness of light and colour and the shifting pattern of the natural scene. Brushwork became rapid and broken into separate dabs in order to render the fleeting quality of light. The first group exhibition was in Paris in 1874 and included work by Monet, Auguste Renoir, Edgar Degas and Paul Cezanne.The work shown was greeted with derision with Monet Impression, Sunrise particularly singled out for ridicule and giving its name(used by critics as an insult) to the movement.Seven further exhibitions were then held at intervals until 1886. Other core artists of impressionism were Camille Pissarro and Berthe Morisot with Edgar Degas and Edouard Manet also often associated with the movement.",
         year: "1860",
@@ -141,76 +211,7 @@ export const ArtPeriods = [
         }
         ,
     },
-    {
-        title: "Post-impressionism",
-        text: " is a term which describes the changes in impressionism from about 1886, the date of last Impressionist group show in Paris.The term is usually confined to the four major figures who developed and extended impressionism in distinctly different directions: Paul Cezanne, Paul Gauguin, Georges Seurat and Vincent van Gogh. Cézanne retained the fundamental doctrine of painting from nature but with added rigour, famously saying I want to re-do Poussin from nature. (Poussin being a notoriously intellectual pioneer of French landscape).Seurat put impressionist painting of light and colour on a scientific basis(neo- Impressionism, divisionism).Gauguin retained intense light and colour but rejected painting from nature and reintroduced imaginative subject matter.Van Gogh painted from nature but developed highly personal use of colour and brushwork directly expressing emotional response to subject and his inner world. Post - impressionism as a term was first used by British artist and art critic Roger Fry in 1910 when he organized the 1910 exhibition Manet and the Post - Impressionists.",
-        year: "1886",
-        artworksQuery:
-        {
-            "query": {
-                "bool": {
-                    "must": [
-                        {
-                            "match": {
-                                "artwork_type_title": "Painting"
-                            }
-                        },
-                        {
-                            "match": {
-                                "style_title": "Post-Impressionism"
-                            }
-                        },
-                        {
-                            "exists": {
-                                "field": "id"
-                            }
-                        },
-                        {
-                            "exists": {
-                                "field": "artist_title"
-                            }
-                        },
-                        {
-                            "exists": {
-                                "field": "image_id"
-                            }
-                        },
-                        {
-                            "exists": {
-                                "field": "place_of_origin"
-                            }
-                        },
-                        {
-                            "exists": {
-                                "field": "title"
-                            }
-                        },
-                        {
-                            "exists": {
-                                "field": "date_end"
-                            }
-                        },
-                        {
-                            "exists": {
-                                "field": "medium_display"
-                            }
-                        },
-                        {
-                            "exists": {
-                                "field": "dimensions"
-                            }
-                        },
-                        {
-                            "exists": {
-                                "field": "style_title"
-                            }
-                        },
-                    ]
-                }
-            }
-        }
-        ,
-    },
+
     {
         title: "Abstract",
         text: " art is art that does not attempt to represent an accurate depiction of a visual reality but instead use shapes, colours, forms and gestural marks to achieve its effect. Strictly speaking, the word abstract means to separate or withdraw something from something else. The term can be applied to art that is based an object, figure or landscape, where forms have been simplified or schematised. It is also applied to art that uses forms, such as geometric shapes or gestural marks, which have no source at all in an external visual reality.Some artists of this pure abstraction have preferred terms such as concrete art or non- objective art, but in practice the word abstract is used across the board and the distinction between the two is not always obvious. Abstract art is often seen as carrying a moral dimension, in that it can be seen to stand for virtues such as order, purity, simplicity and spirituality.",
@@ -424,7 +425,216 @@ export const ArtPeriods = [
         }
         ,
     },
-
+    {
+        title: "Pop Art",
+        text: " is an art movement that emerged in the 1950s and flourished in the 1960s in America and Britain, drawing inspiration from sources in popular and commercial culture.It began as a revolt against the dominant approaches to art and culture and traditional views on what art should be.Young artists felt that what they were taught at art school and what they saw in museums did not have anything to do with their lives or the things they saw around them every day.Instead, they turned to sources such as Hollywood movies, advertising, product packaging, pop music, and comic books for their imagery.",
+        year: "1950",
+        artworksQuery:
+        {
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+                            "match": {
+                                "artwork_type_title": "Painting"
+                            }
+                        },
+                        {
+                            "match": {
+                                "style_title": "Pop Art"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "id"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "artist_title"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "image_id"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "place_of_origin"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "title"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "date_end"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "medium_display"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "dimensions"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "style_title"
+                            }
+                        },
+                    ]
+                }
+            }
+        }
+        ,
+    },
+    {
+        title: "Contemporary Art",
+        text: "  ,is a  term used to refer to the art of the present day and the relatively recent past, of an innovator or avant-garde nature.",
+        year: "1970",
+        artworksQuery:
+        {
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+                            "match": {
+                                "artwork_type_title": "Painting"
+                            }
+                        },
+                        {
+                            "match": {
+                                "style_title": "contemporary"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "id"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "artist_title"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "image_id"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "place_of_origin"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "title"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "date_end"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "medium_display"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "dimensions"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "style_title"
+                            }
+                        },
+                    ]
+                }
+            }
+        }
+        ,
+    },
+    {
+        title: "21st Century Art",
+        text: "is a burgeoning field of practice, research, and publication, making it an incredibly dynamic field of study. Many important topics have been resonating in the new century and inspiring new thinking and scholarly debate, such as the surge of bio-art in response to scientific research in the life sciences, and the critical theory known as relational aesthetics that developed in response to an increase in the art that invites viewers participation and interaction. Other topics that were much-discussed in the late 20th century remain vital for the analysis of 21st-century art and visual culture, including semiotics, post-modernism, and feminism.",
+        year: "2000",
+        artworksQuery:
+        {
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+                            "match": {
+                                "artwork_type_title": "Painting"
+                            }
+                        },
+                        {
+                            "match": {
+                                "style_title": "21st Century"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "id"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "artist_title"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "image_id"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "place_of_origin"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "title"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "date_end"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "medium_display"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "dimensions"
+                            }
+                        },
+                        {
+                            "exists": {
+                                "field": "style_title"
+                            }
+                        },
+                    ]
+                }
+            }
+        }
+        ,
+    },
 ];
 
 

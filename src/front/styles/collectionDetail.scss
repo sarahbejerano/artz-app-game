@@ -1,6 +1,6 @@
 @import "variables.scss";
-.collectionPageDetailContainer {
-    font-family: $primary-font;
+.collectionForPeriodContainer {
+    font-family: $secondary-font;
     color: $color-bone;
     background-color: $color-charcoal;
     min-height: 100%;
@@ -13,12 +13,12 @@
         margin-bottom: 20px;
     }
     .detailText {
-        font-family: $secondary-font;
-        margin-bottom: 20px;
-        .modernismLink {
-            color: $color-bone;
-            text-decoration: underline;
-            font-weight: bolder;
-        }
+        margin: 0 0 20px 0;
+        font-size: 20px;
+    }
+    .cardLink .cardFull .cardBody .cardTitle {
+        text-align: center;
+        font-size: 20px;
+        padding: 5px;
     }
 }

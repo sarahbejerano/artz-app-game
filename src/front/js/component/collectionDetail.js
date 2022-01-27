@@ -4,12 +4,13 @@ import { Context } from "../store/appContext";
 import { PageHeader } from "../component/header";
 import { CollectionCard } from "../component/card";
 import { Row, Col, Container } from "react-bootstrap"
-import "../../styles/collectionDetail.scss";
-import { ArtPeriods } from "../service/collectionGenerator";
 import { useParams } from "react-router-dom";
+import { ArtPeriods } from "../service/collectionGenerator";
+import "../../styles/collectionDetail.scss";
 
 
-export const CollectionDetail = () => {
+
+export const CollectionForPeriod = () => {
     const { store, actions } = useContext(Context)
     const { style } = useParams();
     const currentStyle = ArtPeriods[style];
@@ -26,11 +27,10 @@ export const CollectionDetail = () => {
 
 
     return (
-        <div className="collectionPageDetailContainer">
+        <div className="collectionForPeriodContainer">
             <PageHeader />
             <Container>
                 <Row className="detailText">
-                    {/* <a href="https://www.tate.org.uk/art/art-terms/m/modernism" target="blank" className="modernismLink"> </a> */}
                     {currentStyle.title}
                     {currentStyle.text}
                 </Row>
@@ -38,8 +38,13 @@ export const CollectionDetail = () => {
                     {store.artworks[currentStyle.title] && store.artworks[currentStyle.title].map((artwork, idx) => (
                         <Col className="cardColumn" key={idx}>
                             <CollectionCard
+
                                 url={"/artwork/" + currentStyle.title + "/" + idx}
-                                image={artwork.imageUrl} />
+                                image={artwork.imageUrl}
+                                title={artwork.title}
+                                artist={artwork.artist_title}
+
+                            />
                         </Col>
                     )
                     )}

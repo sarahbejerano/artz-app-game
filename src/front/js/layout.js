@@ -4,7 +4,7 @@ import ScrollToTop from "./component/scrollToTop";
 import injectContext from "./store/appContext";
 import { Home } from "./pages/home";
 import { CollectionPage } from "./pages/collection";
-import { CollectionDetail } from "./component/collectionDetail";
+import { CollectionForPeriod } from "./component/collectionDetail";
 import { InfoArtworks } from "./pages/moreInfoArtwork";
 
 // import { QuestionPage } from "./pages/question";
@@ -36,7 +36,7 @@ const Layout = () => {
 							<CollectionPage />
 						</Route>
 						<Route path="/detail/:style">
-							<CollectionDetail />
+							<CollectionForPeriod />
 						</Route>
 						<Route exact path="/infoartwork">
 							<InfoArtworks />

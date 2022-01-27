@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect } from "react";
 import { PageHeader } from "../component/header";
 import { CollectionCard } from "../component/card";
 import { Row, Col } from "react-bootstrap"
-import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/collection.scss";
 import { ArtPeriods } from "../service/collectionGenerator";
@@ -11,7 +10,6 @@ const randomNumber = (limit) => Math.floor(Math.random() * limit);
 
 export const CollectionPage = () => {
     const { store, actions } = useContext(Context)
-
     useEffect(() => {
         ArtPeriods.forEach((artPeriod, idx) => {
             if (!store.artworks[artPeriod.title]) {

@@ -2,13 +2,11 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom"
-import { useContext } from "react";
-import { Context } from "../store/appContext";
 import "../../styles/card.scss";
 
 
-export const CollectionCard = ({ url, image, title, year }) => {
-    const { store } = useContext(Context);
+export const CollectionCard = ({ url, image, title, year, artist }) => {
+
 
     return (
         <Link to={url} className="cardLink">
@@ -21,6 +19,7 @@ export const CollectionCard = ({ url, image, title, year }) => {
                 <Card.Body className="cardBody">
                     <Card.Title className="cardTitle">{title}
                         <Card.Text>{year}</Card.Text>
+                        <Card.Text>{artist}</Card.Text>
                     </Card.Title>
                 </Card.Body>
             </Card>
@@ -33,5 +32,6 @@ CollectionCard.propTypes = {
     url: PropTypes.string,
     image: PropTypes.string,
     title: PropTypes.string,
-    year: PropTypes.string
+    year: PropTypes.string,
+    artist: PropTypes.string
 };
