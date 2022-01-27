@@ -25,13 +25,24 @@
         .cardBody {
             flex-direction: column;
             display: flex;
+            font-family: $primary-font;
             color: $color-bone;
             padding: 0px;
-
             height: 23%;
+            .cardYear {
+                font-family: $secondary-font;
+            }
+            .cardArtist {
+                text-align: center;
+                font-family: $secondary-font;
+                font-size: 20px;
+            }
             .cardTitle {
                 text-align: center;
-                font-size: 40px;
+                font-size: 25px;
+                padding: 0 7px 2px 7px;
+                overflow: hidden;
+                text-overflow: quote($string: "");
             }
         }
     }
