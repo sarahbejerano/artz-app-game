@@ -1,14 +1,102 @@
 @import "variables.scss";
 
-.InfoArtworksBody {
-    font-family: $primary-font;
+.infoArtWorkContainer {
+    background-color: $color-charcoal;
+    padding-bottom: 7%;
 
-    .one {
+    .infoArtworkBody {
+        width: 60%;
+        height: 100%;
         background-color: $color-green;
-        width: 40%;
-        color: $color-bone;
+        margin-left: 4%;
+        margin-top: -12%;
+
+        .text {
+            font-family: $primary-font;
+            color: $color-bone;
+            padding: 10%;
+            line-height: 1;
+            height: 35%;
+            padding-top: 0;
+            margin-right: 0;
+            p {
+                margin-bottom: 7%;
+                font-size: 18px;
+            }
+        }
+        .artwork {
+            position: static;
+            &.portrait {
+                margin: 15%;
+                margin-left: 6%;
+                margin-bottom: 1%;
+                height: 0;
+                width: 0;
+            }
+            &.landscape {
+                height: 200%;
+                width: 120%;
+                margin: 15%;
+                margin-left: 4%;
+                margin-bottom: 1%;
+            }
+            img {
+                margin: 5%;
+                height: 100%;
+                width: 100%;
+            }
+        }
     }
-    .two {
-        width: 50%;
+}
+@media only screen and (min-width: $small-media-query) {
+    .infoArtWorkContainer {
+        background-color: $color-charcoal;
+        padding-bottom: 0%;
+
+        .infoArtworkBody {
+            width: 50%;
+            height: 50%;
+            background-color: $color-green;
+            margin-left: 3%;
+            margin-top: 0;
+            position: relative;
+            .text {
+                font-family: $primary-font;
+                color: $color-bone;
+                padding: 10%;
+                line-height: 1;
+                height: auto;
+                padding-top: 7%;
+                margin-right: 4%;
+                p {
+                    margin-bottom: 7%;
+                    font-size: 30px;
+                }
+            }
+            .artwork {
+                position: absolute;
+                &.portrait {
+                    margin: 0;
+                    left: 85%;
+                    top: -10%;
+                    height: auto;
+                    width: 80%;
+                }
+
+                &.landscape {
+                    height: auto;
+                    width: 100%;
+                    margin: 4%;
+                    left: 80%;
+                    top: 0;
+                }
+
+                img {
+                    margin: 5%;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
     }
 }
