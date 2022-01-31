@@ -1,70 +1,79 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { Context } from "../store/appContext";
 import "../../styles/moreInfoArtworks.scss";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { PageHeader } from "../component/header";
+import { useParams } from "react-router-dom";
+import { ArtPeriods } from "../service/collectionGenerator";
 
 
-export const InfoArtworks = ({ id, image, title, artist_title, date_end, style_title, place_of_origin, medium_display, dimensions, ...props }) => {
+export const InfoArtwork = () => {
+    const { store, actions } = useContext(Context)
+    const { id, style } = useParams();
+    const currentStyle = store.artworks[style];
+    const history = useHistory();
+
+    const [artwork, setArtwork] = useState(currentStyle && currentStyle[id]);
+
+    console.log(store.artworks)
+    console.log(id, style);
+
+    // if (!ArtPeriods[style]) {
+    //     history.push("/collection")
+    // }
+
+    //si current style existe utiliza currentID y sino es undefined 
+    // useEffect(() => {
+    //     if (currentStyle) {
+    //         setArtwork(currentStyle[id]);
+    //     }
+    // }, [currentStyle]);
+
+    // useEffect(() => {
+    //     if (artwork === undefined) {
+    //         history.push("/collection")
+    //     }
+    // }, [artwork]);
+
+
+    console.log(artwork)
+
+    const orientationClass = artwork && artwork.thumbnail.width > artwork.thumbnail.height ? "landscape" : "portrait";
+
     return (
+        <>
+            {artwork && (
+                <Container className="infoArtWorkContainer">
 
-        <Container className="InfoArtworksBody">
-            <Row xs={1} md={2}>
-                <Col className="one">
-                    <h1>Color and Text Block</h1>
-                </Col>
-                <Col className="two">
-                    <img src="https://www.artic.edu/iiif/2/f8fd76e9-c396-5678-36ed-6a348c904d27/full/843,/0/default.jpg" alt="boximage" />
-                </Col>
-            </Row>
-        </Container>
+                    <PageHeader />
+                    <div className="infoArtworkBody" >
+                        <div className={"artwork " + orientationClass} >
+                            <img
+                                src={artwork.imageUrl}
+                                alt={artwork.title}
+                                width={artwork.thumbnail.width}
+                                height={artwork.thumbnail.height}
+                                style={{ backgroundImage: artwork.thumbnail.lqip }}
+                            />
+                        </div>
 
 
-        //         <Modal
-        //             {...props}
-        //             size="lg"
-        //             aria-labelledby="contained-modal-title-vcenter"
-        //             centered
-        //             className="modalInfoContainer"
-        //         >
-        //             <Modal.Header>
-        //                 <Modal.Title id="contained-modal-title-vcenter">
-        //                     <h3> {title}</h3>
-        //                     <h4> {artist_title}</h4>
-        //                 </Modal.Title>
-        //             </Modal.Header>
-        //             <Modal.Body>
+                        <div className="text">
+                            <p> "{artwork.title}"</p>
+                            <p> by {artwork.artist_title}</p>
+                            <p>{artwork.place_of_origin}, {artwork.date_end}</p>
+                            <p> {artwork.style_title} art movement</p>
+                            <p> {artwork.medium_display}</p>
+                            <p>{artwork.dimensions}</p >
+                        </div>
 
-        //                 <div className="imageModalContainer"><img src={image} /></div>
-        //                 <h4>
-        //                     {place_of_origin}, {date_end} <br />
-        //                     {style_title} <br />
-        //                 </h4>
-        //             </Modal.Body>
 
-        //             <Modal.Footer>
-        //                 <PageButton
-        //                     text="Close"
-        //                     variant="primary small"
-        //                     callback={props.onHide}
-        //                 />
+                    </div>
 
-        //             </Modal.Footer>
-        //             <h7> Courtesy of Art Institute of Chicago API </h7>
-        //         </Modal >
-
+                </Container>
+            )
+            }
+        </>
     );
 }
-
-InfoArtworks.propTypes = {
-    id: PropTypes.number,
-    title: PropTypes.string,
-    artist_title: PropTypes.string,
-    place_of_origin: PropTypes.string,
-    date_end: PropTypes.number,
-    style_title: PropTypes.string,
-    medium_display: PropTypes.string,
-    dimensions: PropTypes.string,
-    image: PropTypes.string,
-
-
-};
