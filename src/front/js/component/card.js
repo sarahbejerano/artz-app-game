@@ -6,9 +6,7 @@ import { Link } from "react-router-dom"
 import "../../styles/card.scss";
 
 
-export const CollectionCard = ({ url, image, title, year, artist }) => {
-
-
+export const CollectionCard = ({ url, image, title, year, artist, altText }) => {
     return (
         <Link to={url} className="cardLink">
             <Card className="cardFull">
@@ -16,6 +14,7 @@ export const CollectionCard = ({ url, image, title, year, artist }) => {
                     className="cardImage"
                     variant="top"
                     src={image}
+                    alt={altText}
                 />
                 <Card.Body className="cardBody">
                     <Card.Title className="cardTitle">{title}
@@ -34,5 +33,6 @@ CollectionCard.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     year: PropTypes.string,
-    artist: PropTypes.string
+    artist: PropTypes.string,
+    altText: PropTypes.string,
 };

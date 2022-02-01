@@ -24,9 +24,12 @@ export const CollectionPage = () => {
             const artworksForCurrentPeriod = store.artworks[artPeriod.title];
             const imageIndex = randomNumber(artworksForCurrentPeriod.length);
 
-            return store.artworks[artPeriod.title][imageIndex].imageUrl;
+            return {
+                image: store.artworks[artPeriod.title][imageIndex].imageUrl,
+                altText: store.artworks[artPeriod.title][imageIndex].thumbnail.alt_text,
+            };
         }
-        return null;
+        return {};
     };
 
 
@@ -41,7 +44,7 @@ export const CollectionPage = () => {
                                 url={"/detail/" + idx}
                                 title={artPeriod.title}
                                 year={artPeriod.year}
-                                image={getImage(artPeriod)}
+                                {...getImage(artPeriod)}
                             />
                         </Col>
                     ))}
@@ -51,6 +54,5 @@ export const CollectionPage = () => {
         </>
     );
 };
-
 
 

@@ -38,9 +38,9 @@ export const CollectionForPeriod = () => {
                     {store.artworks[currentStyle.title] && store.artworks[currentStyle.title].map((artwork, idx) => (
                         <Col className="cardColumn" key={idx}>
                             <CollectionCard
-
                                 url={"/artwork/" + currentStyle.title + "/" + idx}
                                 image={artwork.imageUrl}
+                                altText={artwork.thumbnail.alt_text}
                                 title={artwork.title}
                                 artist={artwork.artist_title}
 
