@@ -1,14 +1,15 @@
 @import "variables.scss";
+
 .modalInfoContainer {
-    font-family: $primary-font;
-    text-transform: uppercase;
+    // font-family: $primary-font;
+    // text-transform: uppercase;
 
     .modal-dialog {
-        max-width: 50vh;
-        max-height: 70vh;
-        margin: 1.75rem auto;
+        // max-width: 50vh;
+        // max-height: 70vh;
+        // margin: 1.75rem auto;
         .modal-content {
-            background-color: $color-bone;
+            background-color: $color-charcoal;
             border-radius: 0;
         }
     }
@@ -27,35 +28,7 @@
     h7 {
         padding-left: 1vh;
         padding-bottom: 0.5vh;
+        font-family: $secondary-font;
+        color: $color-bone;
     }
 }
-
-// .modalContainer {
-//     color: $color-green;
-// }
-// .modal-content {
-//     background-color: $color-bone;
-//     border-radius: 0;
-//     font-family: $primary-font;
-//     text-transform: uppercase;
-//     border: 0;
-// }
-// .modal-header {
-//     border-bottom: 0vh;
-// }
-// .modal-footer {
-//     border-top: 0vh;
-// }
-
-// .container {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-// }
-// h1 {
-//     font-family: $primary-font;
-//     text-transform: uppercase;
-//     color: $color-red;
-//     text-shadow: 0.2vh 0.2vh $color-green;
-//     font-size: 9vh;
-// }

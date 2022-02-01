@@ -6,40 +6,31 @@ import { Container } from "react-bootstrap";
 import { PageHeader } from "../component/header";
 import { useParams } from "react-router-dom";
 import { ArtPeriods } from "../service/collectionGenerator";
-
+import { ModalMenu } from "../component/modal";
 
 export const InfoArtwork = () => {
     const { store, actions } = useContext(Context)
+    const history = useHistory();
     const { id, style } = useParams();
     const currentStyle = store.artworks[style];
-    const history = useHistory();
+    const artwork = currentStyle && currentStyle[id];
 
-    const [artwork, setArtwork] = useState(currentStyle && currentStyle[id]);
+    useEffect(() => {
+        if (!artwork) {
+            const validPeriod = ArtPeriods.find(period => period.title === style);
 
-    console.log(store.artworks)
-    console.log(id, style);
-
-    // if (!ArtPeriods[style]) {
-    //     history.push("/collection")
-    // }
-
-    //si current style existe utiliza currentID y sino es undefined 
-    // useEffect(() => {
-    //     if (currentStyle) {
-    //         setArtwork(currentStyle[id]);
-    //     }
-    // }, [currentStyle]);
-
-    // useEffect(() => {
-    //     if (artwork === undefined) {
-    //         history.push("/collection")
-    //     }
-    // }, [artwork]);
-
-
-    console.log(artwork)
+            // No es un periodo valido
+            if (!validPeriod) {
+                history.push("/collection")
+            } else {
+                actions.getArtworksForPeriod(validPeriod.artworksQuery, validPeriod.title);
+            }
+        }
+    }, [artwork]);
 
     const orientationClass = artwork && artwork.thumbnail.width > artwork.thumbnail.height ? "landscape" : "portrait";
+
+    const [modalShow, setModalShow] = React.useState(false);
 
     return (
         <>
@@ -51,13 +42,20 @@ export const InfoArtwork = () => {
                         <div className={"artwork " + orientationClass} >
                             <img
                                 src={artwork.imageUrl}
-                                alt={artwork.title}
+                                alt={artwork.thumbnail.alt_text}
                                 width={artwork.thumbnail.width}
                                 height={artwork.thumbnail.height}
                                 style={{ backgroundImage: artwork.thumbnail.lqip }}
+                                onClick={() => setModalShow(true)}
                             />
-                        </div>
+                            {artwork && <ModalMenu
+                                show={modalShow}
+                                onHide={() => setModalShow(false)}
+                                imageUrl={artwork.imageUrl}
+                                altText={artwork.thumbnail.alt_text}
 
+                            />}
+                        </div>
 
                         <div className="text">
                             <p> "{artwork.title}"</p>

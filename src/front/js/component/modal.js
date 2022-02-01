@@ -5,7 +5,7 @@ import { PageButton } from "../component/pageButton";
 import "../../styles/modalMenu.scss";
 
 
-export const ModalMenu = ({ image, title, artist_title, date_end, style_title, place_of_origin, ...props }) => {
+export const ModalMenu = ({ imageUrl, altText, ...props }) => {
     return (
 
         <Modal
@@ -15,19 +15,10 @@ export const ModalMenu = ({ image, title, artist_title, date_end, style_title, p
             centered
             className="modalInfoContainer"
         >
-            <Modal.Header>
-                <Modal.Title id="contained-modal-title-vcenter">
-                    <h3> {title}</h3>
-                    <h4> {artist_title}</h4>
-                </Modal.Title>
-            </Modal.Header>
             <Modal.Body>
 
-                <div className="imageModalContainer"><img src={image} /></div>
-                <h4>
-                    {place_of_origin}, {date_end} <br />
-                    {style_title} <br />
-                </h4>
+                <div className="imageModalContainer"><img src={imageUrl} alt={altText} /></div>
+
             </Modal.Body>
 
             <Modal.Footer>
@@ -44,11 +35,6 @@ export const ModalMenu = ({ image, title, artist_title, date_end, style_title, p
 }
 
 ModalMenu.propTypes = {
-    image: PropTypes.string,
-    title: PropTypes.string,
-    artist_title: PropTypes.string,
-    date_end: PropTypes.number,
-    style_title: PropTypes.string,
-    place_of_origin: PropTypes.string,
-
+    imageUrl: PropTypes.string,
+    altText: PropTypes.string,
 };

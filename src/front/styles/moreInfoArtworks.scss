@@ -30,8 +30,8 @@
                 margin: 15%;
                 margin-left: 6%;
                 margin-bottom: 1%;
-                height: 0;
-                width: 0;
+                height: auto;
+                width: auto;
             }
             &.landscape {
                 height: 200%;
@@ -60,6 +60,7 @@
             margin-left: 3%;
             margin-top: 0;
             position: relative;
+
             .text {
                 font-family: $primary-font;
                 color: $color-bone;
@@ -75,26 +76,39 @@
             }
             .artwork {
                 position: absolute;
+                top: 5%;
+                height: 90%;
+                width: 100%;
+                left: 70%;
+                display: flex;
+                justify-items: center;
+                display: flex;
+                justify-content: left;
+
                 &.portrait {
                     margin: 0;
-                    left: 85%;
-                    top: -10%;
-                    height: auto;
-                    width: 80%;
+                    left: 90%;
+                    top: 5%;
+                    height: 90%;
+                    width: 100%;
+                    img {
+                        margin: 0%;
+                        height: 100%;
+                        width: auto;
+                    }
                 }
 
                 &.landscape {
-                    height: auto;
+                    height: 90%;
                     width: 100%;
-                    margin: 4%;
-                    left: 80%;
-                    top: 0;
-                }
-
-                img {
-                    margin: 5%;
-                    height: 100%;
-                    width: 100%;
+                    margin: 0;
+                    left: 85%;
+                    top: 5%;
+                    img {
+                        margin: 0%;
+                        height: auto;
+                        width: 100%;
+                    }
                 }
             }
         }
