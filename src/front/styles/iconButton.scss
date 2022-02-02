@@ -1,0 +1,39 @@
+@import "variables.scss";
+
+.icon-button {
+    background-color: transparent;
+    color: $color-red;
+    border: none;
+    margin-right: -20px;
+
+    .body {
+        margin-right: 20px;
+
+        .text {
+            font-family: $primary-font;
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+        .svg-inline--fa {
+            display: inline-block;
+            font-size: 20px;
+            height: 1em;
+            overflow: visible;
+            vertical-align: -0.13em;
+        }
+
+        @media only screen and (min-width: $small-media-query) {
+            .text {
+                font-family: $primary-font;
+                font-size: 30px;
+                margin-bottom: 0;
+            }
+            .svg-inline--fa {
+                display: inline-block;
+                font-size: 40px;
+                overflow: visible;
+                vertical-align: -0.125em;
+            }
+        }
+    }
+}
