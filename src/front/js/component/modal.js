@@ -1,9 +1,9 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
 import PropTypes from "prop-types";
-import { PageButton } from "../component/pageButton";
+import { IconButton } from "../component/iconButton";
 import "../../styles/modalMenu.scss";
-
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export const ModalMenu = ({ imageUrl, altText, ...props }) => {
     return (
@@ -16,20 +16,19 @@ export const ModalMenu = ({ imageUrl, altText, ...props }) => {
             className="modalInfoContainer"
         >
             <Modal.Body>
-
-                <div className="imageModalContainer"><img src={imageUrl} alt={altText} /></div>
-
+                <div className="imageModalContainer">
+                    <img src={imageUrl} alt={altText} /></div>
             </Modal.Body>
+            <Modal.Footer className="modalFooter">
 
-            <Modal.Footer>
-                <PageButton
-                    text="Close"
-                    variant="primary small"
+                <IconButton
+                    icon={faTimes}
+                    text="CLOSE"
                     callback={props.onHide}
                 />
+                <p className="courtesyText"> Courtesy of Art Institute of Chicago API </p>
 
             </Modal.Footer>
-            <h7> Courtesy of Art Institute of Chicago API </h7>
         </Modal >
     );
 }
