@@ -19,9 +19,21 @@
             height: 35%;
             padding-top: 0;
             margin-right: 0;
+
             p {
                 margin-bottom: 7%;
                 font-size: 18px;
+            }
+            a {
+                text-decoration: none;
+                color: $color-bone;
+                &:hover {
+                    text-decoration: underline;
+                }
+                &:visited,
+                &:active {
+                    text-decoration: none;
+                }
             }
         }
         .artwork {

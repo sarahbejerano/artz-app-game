@@ -58,9 +58,9 @@ export const InfoArtwork = () => {
                         </div>
 
                         <div className="text">
-                            <p> "{artwork.title}"</p>
-                            <p> by {artwork.artist_title}</p>
-                            <p>{artwork.place_of_origin}, {artwork.date_end}</p>
+                            <p> "<a target="_blank" className="artworkLink" href={"https://www.artic.edu/artworks/" + artwork.id} >{artwork.title}</a> "</p>
+                            <p> by <a target="_blank" className="authorLink" href={"https://www.artic.edu/artists/" + artwork.artist_ids + "/"} > {artwork.artist_title}</a></p>
+                            <p>{artwork.place_of_origin}, <a target="_blank" className="yearLink" href={"https://www.artic.edu/collection?date-start=" + artwork.date_end + "&date-end=" + artwork.date_end} >{artwork.date_end}</a></p>
                             <p> {artwork.style_title} art movement</p>
                             <p> {artwork.medium_display}</p>
                             <p>{artwork.dimensions}</p >
