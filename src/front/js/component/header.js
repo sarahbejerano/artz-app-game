@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import "../../styles/header.scss";
 import Logo from "../../img/logo-ok.png";
 

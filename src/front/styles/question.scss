@@ -1,0 +1,190 @@
+@import "variables.scss";
+
+.imageAndProcessCounter {
+    grid-area: item-a;
+}
+.questionIndeed {
+    grid-area: item-b;
+}
+.answers {
+    grid-area: item-c;
+}
+.quitButton {
+    grid-area: item-d;
+}
+.favoriteButton {
+    grid-area: item-e;
+}
+.moreInfoLink {
+    grid-area: item-f;
+}
+.nextButton {
+    grid-area: item-g;
+}
+
+.questionPageContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 25% 25% 25% 25%;
+    //cada linea es un row
+    grid-template-areas:
+        "item-a item-a item-a item-a item-b item-b"
+        "item-a item-a item-a item-a item-c item-c"
+        "item-a item-a item-a item-a item-c item-c"
+        "item-d item-e item-f item-f item-g item-g";
+}
+
+@keyframes wrong {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-1vh);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    75% {
+        transform: translateX(1vh);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.questionPageContainer {
+    background-color: $color-linen;
+    height: 100%;
+    width: auto;
+    font-family: $primary-font;
+
+    .imageAndProcessCounter {
+        box-sizing: border-box;
+        border-right: solid $color-charcoal 20px;
+        border-bottom: solid $color-charcoal 15px;
+        color: $color-green;
+        text-align: center;
+        h2 {
+            font-size: 50px;
+            height: 13%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .imageContainer {
+            width: 100%;
+            height: 80%;
+            img {
+                object-fit: cover;
+                width: auto;
+                height: 100%;
+            }
+        }
+    }
+    .questionIndeed {
+        box-sizing: border-box;
+        border-bottom: solid $color-charcoal 15px;
+        background-color: $color-green;
+        color: $color-linen;
+        font-size: 60px;
+        text-align: left;
+        padding-left: 2%;
+        padding-top: 3%;
+        p {
+            line-height: 50pt;
+        }
+    }
+    .form-check-input {
+        text-align: left;
+        vertical-align: middle;
+        background: $color-green;
+        border: 1px solid $color-green;
+        border-radius: 20px;
+    }
+    .answers {
+        box-sizing: border-box;
+        border-bottom: solid $color-charcoal 15px;
+        background-color: $color-linen;
+        color: $color-charcoal;
+        font-size: 36px;
+        margin-top: 25px;
+        padding-left: 20px;
+        overflow: auto;
+
+        .form-check {
+            margin-bottom: 20px;
+        }
+
+        .form-check-label {
+            width: 90%;
+            &.incorrect {
+                animation: wrong 0.1s 3;
+            }
+        }
+        .form-check-input:checked {
+            border-color: $color-green;
+            background-color: $color-green;
+        }
+    }
+
+    .quitButton {
+        box-sizing: border-box;
+        border-right: solid $color-charcoal 20px;
+        background-color: $color-red;
+        color: $color-green;
+        font-size: 80px;
+        padding-left: 3%;
+        padding-top: 15%;
+    }
+    .favoriteButton {
+        outline: 0;
+        border: none;
+        box-sizing: border-box;
+        border-right: solid $color-charcoal 20px;
+        background-color: $color-linen;
+        color: $color-green;
+        font-size: 50px;
+        padding-left: 5%;
+        padding-top: 7%;
+        text-align: left;
+        transition: color 0.2s;
+        &.remove {
+            color: $color-red;
+        }
+        p {
+            line-height: 30pt;
+        }
+    }
+    .moreInfoLink {
+        box-sizing: border-box;
+        border-right: solid $color-charcoal 20px;
+        background-color: $color-linen;
+        color: $color-red;
+        font-size: 80px;
+        padding-left: 3%;
+        .dontBeAfraid {
+            line-height: 1pt;
+            font-size: 35px;
+        }
+    }
+    .nextButton {
+        background-color: $color-linen;
+        color: $color-charcoal;
+        font-size: 100px;
+        padding-left: 40%;
+        padding-top: 5%;
+        outline: 0;
+        border: none;
+        .fontIcon {
+            color: $color-charcoal;
+            height: 90px;
+            transition: transform 0.2s;
+            margin-bottom: 2px;
+        }
+        &:hover {
+            .fontIcon {
+                transform: translate3d(12px, 0, 0);
+            }
+        }
+    }
+}
