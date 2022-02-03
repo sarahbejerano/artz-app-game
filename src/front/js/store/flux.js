@@ -13,8 +13,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			score: 0,
 			question: null,
-			user: null,
+			user: {
+				username: 'Pepito'
+			},
 			artworks: {},
+			favorites: [],
 		},
 		actions: {
 			getQuestion: () => {
@@ -31,6 +34,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 							}
 						});
 					});
+			},
+			addToFavorites: (id) => {
+				const { favorites } = getStore();
+				setStore({ favorites: [...favorites, id] });
+			},
+			removeFromFavorites: (id) => {
+				const { favorites } = getStore();
+				const newFavorites = favorites.filter(favorite => favorite !== id);
+				setStore({ favorites: newFavorites });
 			},
 			increaseScore: () => {
 				const { score } = getStore();

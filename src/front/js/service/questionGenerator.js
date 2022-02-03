@@ -77,7 +77,7 @@ export const getAuthorQuestion = (setStore) => {
                         image: imageUrl + correctAnswer.image_id + imageParams,
                         ...correctAnswer,
                     },
-                    questionPrompt: "Who is the author?"
+                    questionPrompt: "Who is \nthe author?"
                 }
             });
 
@@ -102,7 +102,7 @@ export const getPeriodQuestion = (setStore) => {
                         title: correctAnswer.date_end,
                         ...correctAnswer,
                     },
-                    questionPrompt: "What is the year?"
+                    questionPrompt: "What is \nthe year?"
                 }
             });
 
@@ -126,7 +126,7 @@ export const getTitleQuestion = (setStore) => {
                         title: correctAnswer.title,
                         ...correctAnswer,
                     },
-                    questionPrompt: "Which is the title?"
+                    questionPrompt: "What is \nthe title?"
                 }
             });
 
@@ -150,7 +150,7 @@ export const getArtMovementQuestion = (setStore) => {
                         title: correctAnswer.style_title,
                         ...correctAnswer,
                     },
-                    questionPrompt: "Artistic Movement?"
+                    questionPrompt: "What is the \nartistic movement?"
                 }
             });
 
