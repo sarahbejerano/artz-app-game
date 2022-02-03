@@ -1,7 +1,7 @@
 import React from "react";
-import { Modal, } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import PropTypes from "prop-types";
-import { PageButton } from "../component/pageButton";
+import { RedButton } from "../component/redButton";
 import "../../styles/modalDialogue.scss";
 
 
@@ -14,32 +14,20 @@ export const DialogueModal = ({ onQuit, ...props }) => {
             centered
             className="modalDialogueContainer"
         >
-            <Modal.Header>
-                <Modal.Title id="contained-modal-title-vcenter">
-                </Modal.Title>
-            </Modal.Header>
             <Modal.Body>
-                <div className="textModalContainer">
-                    Are you sure you
-                    want to sleep
-                    at the museum
-                    tonight?
+                <div className="areYouSureText">
+                    Are you sure?
                 </div>
-            </Modal.Body>
-
-            <Modal.Footer>
-                <PageButton
-                    text="Back"
-                    variant="primary small"
+                <RedButton
+                    text="No, I want to keep learning"
                     callback={props.onHide}
+                    className="no"
                 />
-                <PageButton text="Yes, I'm sure" variant="secondary small"
+                <RedButton text="Yes, I'm sure" variant="secondary small"
                     callback={() => { onQuit() }}
                     className="yesImSure"
                 />
-
-            </Modal.Footer>
-
+            </Modal.Body>
         </Modal >
     );
 }

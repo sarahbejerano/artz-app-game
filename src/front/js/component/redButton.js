@@ -1,12 +1,13 @@
 import React from "react";
-import "../../styles/button.scss"
+import "../../styles/redButton.scss"
 import PropTypes from 'prop-types';
 
 
-export const PageButton = ({ text, callback, variant = "primary", className }) => {
+export const RedButton = ({ text, callback, className }) => {
 
     return (
-        <button className={`pixel-button ${variant} ${className} `} onClick={callback}>
+        <button className={`red-button ${className} `}
+            onClick={callback}>
             <div className="body">
                 <p className="text">{text}</p>
             </div>
@@ -15,8 +16,9 @@ export const PageButton = ({ text, callback, variant = "primary", className }) =
 };
 
 
-PageButton.propTypes = {
+RedButton.propTypes = {
     text: PropTypes.string,
     callback: PropTypes.func,
-    variant: PropTypes.string,
+
+
 };

@@ -128,14 +128,19 @@
     }
 
     .quitButton {
+        border: none;
         box-sizing: border-box;
         border-right: solid $color-charcoal 20px;
         background-color: $color-red;
         color: $color-green;
         font-size: 80px;
-        padding-left: 3%;
-        padding-top: 15%;
+        padding-top: 5%;
+        outline: 0;
+        &:hover {
+            text-decoration: line-through;
+        }
     }
+
     .favoriteButton {
         outline: 0;
         border: none;
@@ -164,7 +169,7 @@
         padding-left: 3%;
         .dontBeAfraid {
             line-height: 1pt;
-            font-size: 35px;
+            font-size: 30px;
         }
     }
     .nextButton {
@@ -183,7 +188,7 @@
         }
         &:hover {
             .fontIcon {
-                transform: translate3d(12px, 0, 0);
+                transform: translate3d(18px, 0, 0);
             }
         }
     }
