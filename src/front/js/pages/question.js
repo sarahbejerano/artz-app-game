@@ -2,11 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/question.scss";
-// import { ModalMenu } from "../component/modal"
+import { MoreInfoModal } from "../component/moreInfoModal"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { DialogueModal } from '../component/dialogueModal'
-
 
 const NewLineText = ({ text }) => {
     return text.split('\n').map(str => <p>{str}</p>);
@@ -18,7 +17,8 @@ export const QuestionPage = () => {
     const [showIncorrect, setShowIncorrect] = useState(false);
     const [incorrectId, setIncorrectId] = useState(null);
     const [selectedId, setSelectedId] = useState("");
-    const [modalShow, setModalShow] = React.useState(true);
+    const [modalShow, setModalShow] = React.useState(false);
+    const [modalDetailShow, setModalDetailShow] = React.useState(true);
 
     useEffect(() => {
         if (store.score < 10) {
@@ -78,11 +78,12 @@ export const QuestionPage = () => {
                             onHide={() => setModalShow(false)}
                             onQuit={onQuit}
                         />
-                        {/* <ModalMenu
-                            show={modalShow}
-                            onHide={() => setModalShow(false)}
+                        <MoreInfoModal
+                            show={modalDetailShow}
+                            onHide={() => setModalDetailShow(false)}
                             {...store.question.correctAnswer}
-                        /> */}
+                        />
+
                         <div className="questionPageContainer">
                             <div className="imageAndProcessCounter">
                                 <h2>{`${store.score}/10 question`}</h2>
@@ -96,7 +97,6 @@ export const QuestionPage = () => {
                                 <NewLineText text={store.question.questionPrompt} />
                             </div>
                             <div className="answers">
-
                                 {store.question.answers.map(function (answer, index) {
                                     return <div key={index}
                                         className="form-check">
@@ -111,19 +111,22 @@ export const QuestionPage = () => {
                                         </label>
                                     </div>;
                                 })}
-
-
                             </div>
 
                             <button className="quitButton" onClick={() => setModalShow(true)}
                             >quit?
-
                             </button>
 
                             <button className={`favoriteButton ${isFavorite ? 'remove' : ''}`} onClick={handleFavoriteButton}>
                                 <NewLineText text={isFavorite ? "Remove \n from \n favorites" : "Add \n To \n Favorites"} />
                             </button>
-                            <div className="moreInfoLink"> <p>more info ?</p><p className="dontBeAfraid">(don't be afraid to ask)</p></div>
+
+                            <button className="moreInfoLink" onClick={() => setModalDetailShow(true)}>
+                                <p className="moreInfo"> more info?</p>
+                                <p className="dontBeAfraid">(don't be afraid to ask)</p>
+                            </button>
+
+
                             <button className="nextButton" onClick={() => onUserSubmit(selectedId)}>
                                 Next
                                 <FontAwesomeIcon
