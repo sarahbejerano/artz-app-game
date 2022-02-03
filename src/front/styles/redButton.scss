@@ -1,0 +1,23 @@
+@import "variables.scss";
+
+.red-button {
+    font-family: $primary-font;
+    background-color: $color-red;
+    color: $color-charcoal;
+    border: 0;
+    height: 50px;
+    width: auto;
+
+    .body {
+        .text {
+            margin-bottom: 0;
+            font-size: 30px;
+            margin: 0 20px;
+        }
+    }
+    &:hover {
+        outline-style: outset;
+        outline-color: $color-red;
+        color: $color-bone;
+    }
+}

@@ -2,13 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/question.scss";
-import { ModalMenu } from "../component/modal"
+// import { ModalMenu } from "../component/modal"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
-import { Card, Container } from "react-bootstrap";
-import PropTypes from "prop-types";
-import { ProgressBar } from "../component/progressBar";
 import { DialogueModal } from '../component/dialogueModal'
+
 
 const NewLineText = ({ text }) => {
     return text.split('\n').map(str => <p>{str}</p>);
@@ -20,7 +18,7 @@ export const QuestionPage = () => {
     const [showIncorrect, setShowIncorrect] = useState(false);
     const [incorrectId, setIncorrectId] = useState(null);
     const [selectedId, setSelectedId] = useState("");
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = React.useState(true);
 
     useEffect(() => {
         if (store.score < 10) {
@@ -75,11 +73,16 @@ export const QuestionPage = () => {
             {store.question &&
                 (
                     <>
-                        <ModalMenu
+                        <DialogueModal
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                            onQuit={onQuit}
+                        />
+                        {/* <ModalMenu
                             show={modalShow}
                             onHide={() => setModalShow(false)}
                             {...store.question.correctAnswer}
-                        />
+                        /> */}
                         <div className="questionPageContainer">
                             <div className="imageAndProcessCounter">
                                 <h2>{`${store.score}/10 question`}</h2>
@@ -112,7 +115,11 @@ export const QuestionPage = () => {
 
                             </div>
 
-                            <div className="quitButton">quit?</div>
+                            <button className="quitButton" onClick={() => setModalShow(true)}
+                            >quit?
+
+                            </button>
+
                             <button className={`favoriteButton ${isFavorite ? 'remove' : ''}`} onClick={handleFavoriteButton}>
                                 <NewLineText text={isFavorite ? "Remove \n from \n favorites" : "Add \n To \n Favorites"} />
                             </button>
@@ -127,7 +134,12 @@ export const QuestionPage = () => {
 
 
 
-                            {/* <PageButton
+
+
+
+
+
+                            {/* <RedButton
                 className="moreInfoButton"
                 text="+Info"
                 // variant="primary small"
