@@ -72,7 +72,7 @@
             align-items: center;
         }
         .imageContainer {
-            width: 100%;
+            width: auto;
             height: 80%;
             img {
                 object-fit: cover;
@@ -160,16 +160,32 @@
             line-height: 30pt;
         }
     }
+
     .moreInfoLink {
         box-sizing: border-box;
+        border: none;
         border-right: solid $color-charcoal 20px;
         background-color: $color-linen;
         color: $color-red;
-        font-size: 80px;
-        padding-left: 3%;
+        outline: 0;
+
+        .moreInfo {
+            font-size: 80px;
+            text-align: left;
+            margin-left: 10px;
+            margin-bottom: 2px;
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: underline;
+            }
+        }
         .dontBeAfraid {
             line-height: 1pt;
             font-size: 30px;
+            text-align: left;
+            margin-left: 12px;
+            margin-bottom: -20px;
         }
     }
     .nextButton {

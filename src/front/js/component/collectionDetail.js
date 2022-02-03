@@ -9,7 +9,6 @@ import { ArtPeriods } from "../service/collectionGenerator";
 import "../../styles/collectionDetail.scss";
 
 
-
 export const CollectionForPeriod = () => {
     const { store, actions } = useContext(Context)
     const { style } = useParams();
@@ -24,7 +23,6 @@ export const CollectionForPeriod = () => {
             actions.getArtworksForPeriod(currentStyle.artworksQuery, currentStyle.title);
         }
     }, []);
-
 
     return (
         <div className="collectionForPeriodContainer">
@@ -43,7 +41,6 @@ export const CollectionForPeriod = () => {
                                 altText={artwork.thumbnail.alt_text}
                                 title={artwork.title}
                                 artist={artwork.artist_title}
-
                             />
                         </Col>
                     )
