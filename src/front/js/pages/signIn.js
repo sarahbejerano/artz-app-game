@@ -7,7 +7,6 @@ import { PageButton } from "../component/pageButton";
 
 
 
-
 export const SignIn = () => {
     const history = useHistory();
     const { store, actions } = useContext(Context);

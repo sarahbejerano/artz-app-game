@@ -18,7 +18,7 @@ export const QuestionPage = () => {
     const [incorrectId, setIncorrectId] = useState(null);
     const [selectedId, setSelectedId] = useState("");
     const [modalShow, setModalShow] = React.useState(false);
-    const [modalDetailShow, setModalDetailShow] = React.useState(true);
+    const [modalDetailShow, setModalDetailShow] = React.useState(false);
 
     useEffect(() => {
         if (store.score < 10) {

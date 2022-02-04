@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/createProfile.scss";
-import { PageButton } from "../component/pageButton";
+import { RedButton } from "../component/redButton";
 import validator from "validator";
 import { avatars } from "../service/avatars";
 
@@ -90,7 +90,7 @@ export const CreateProfile = () => {
                 </div>
             </div>
             <div className="buttonContainer">
-                <PageButton
+                <RedButton
                     text="FINISH!!"
                     variant="primary small"
                     callback={onProfileSubmit} />
