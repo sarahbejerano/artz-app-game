@@ -1,47 +1,106 @@
 @import "variables.scss";
 
-@keyframes starAnimation {
-    from {
-        transform: scale3d(1, 1, 1);
+.inputContainer {
+    font-family: $primary-font;
+    .userNameSquare {
+        margin-top: 30px;
+        width: 70%;
+        height: 90%;
+        background-color: $color-red;
+        box-shadow: (3px 3px $color-bone);
+        text-align: left;
+
+        .nameProfile {
+            color: $color-bone;
+            font-family: $primary-font;
+            font-size: 60px;
+            margin-left: 20px;
+        }
+        .scorePlayer {
+            color: $color-bone;
+            font-family: $primary-font;
+            font-size: 50px;
+            margin-left: 20px;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            // margin-bottom: 3vh;
+        }
     }
-    to {
-        transform: scale3d(0, 1, 1);
+    .greenSquare {
+        height: 20%;
+        width: 71%;
+        background-color: $color-green;
+        margin-top: 5vh;
+    }
+    .panelsContainer {
+        display: flex;
+        flex-direction: row;
+        .leftPanel {
+            width: 40%;
+        }
+        .rightPanel {
+            width: 60%;
+            p {
+                color: $color-bone;
+                font-size: 50px;
+                text-align: center;
+            }
+        }
+    }
+    .cardRow {
+        cardColumn {
+            .cardImage {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    // .favoriteData {
+    //     color: $color-bone;
+    //     font-family: $primary-font;
+    //     font-size: 4vh;
+    // }
+
+    // .carouselContainer {
+    //     .favoriteCarousel {
+    //         height: 100%;
+    //         width: 100%;
+    //         p {
+    //             color: $color-bone;
+    //             font-size: 50px;
+    //         }
+    //         .carouselImage {
+    //             height: 100%;
+    //             width: auto;
+    //         }
+    //     }
+    // }
+}
+
+.profileFooter {
+    .closeButton {
+    }
+    .playButton {
     }
 }
 
-.userProfileContainer {
-    .pointsStar {
-        filter: drop-shadow(0.6vh 0.4vh 0 $color-bone);
-        display: flex;
-        margin: auto;
-        animation: starAnimation 0.7s infinite alternate;
-        width: 50%;
-    }
-    .nameProfile {
-        color: $color-bone;
-        font-family: $primary-font;
-        font-size: 7vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .avatarProfile {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 7vh;
-        img {
-            width: 15vh;
-            height: auto;
-        }
-    }
-    .scoreplayer {
-        color: $color-red;
-        font-family: $primary-font;
-        font-size: 8vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 3vh;
-    }
-}
+//  .nameProfile {
+//         color: $color-bone;
+//         font-family: $primary-font;
+//         font-size: 7vh;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//     }
+
+//     .scoreplayer {
+//         color: $color-red;
+//         font-family: $primary-font;
+//         font-size: 8vh;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         margin-bottom: 3vh;
+//     }
