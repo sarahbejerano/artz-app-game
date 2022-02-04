@@ -8,10 +8,8 @@ import { CollectionForPeriod } from "./component/collectionDetail";
 import { InfoArtwork } from "./pages/moreInfoArtwork";
 import { QuestionPage } from "./pages/question";
 import { Login } from "./pages/login";
-
-import { CreateProfile } from "./pages/createProfile";
-// import { UserProfile } from "./pages/userprofile";
-
+import { CreateAccount } from "./pages/createAccount";
+import { UserProfile } from "./pages/userprofile";
 import "../styles/layout.scss";
 
 const Layout = () => {
@@ -27,13 +25,14 @@ const Layout = () => {
 						<Route exact path="/game">
 							<QuestionPage />
 						</Route>
-
-						<Route exact path="/createprofile">
-							<CreateProfile />
+						<Route exact path="/createaccount">
+							<CreateAccount />
 						</Route>
-
 						<Route exact path="/login">
 							<Login />
+						</Route>
+						<Route path="/userprofile">
+							<UserProfile />
 						</Route>
 						<Route exact path="/collection">
 							<CollectionPage />

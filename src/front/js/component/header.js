@@ -18,11 +18,11 @@ export const PageHeader = () => {
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
                 <Nav className=" ms-auto my-2 my-lg-0" navbarScroll>
+                    <Nav.Link href="/collection">COLLECTION</Nav.Link>
+                    <span className="divider">|</span>
                     <Nav.Link href="/game">GAME</Nav.Link>
                     <span className="divider">|</span>
                     <Nav.Link href="/profile">PROFILE</Nav.Link>
-                    <span className="divider">|</span>
-                    <Nav.Link href="/collection">COLLECTION</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
 
