@@ -7,10 +7,11 @@ import { CollectionPage } from "./pages/collection";
 import { CollectionForPeriod } from "./component/collectionDetail";
 import { InfoArtwork } from "./pages/moreInfoArtwork";
 import { QuestionPage } from "./pages/question";
+import { Login } from "./pages/login";
 
-// import { CreateProfile } from "./pages/createProfile";
-// import { SignIn } from "./pages/signIn";
+import { CreateProfile } from "./pages/createProfile";
 // import { UserProfile } from "./pages/userprofile";
+
 import "../styles/layout.scss";
 
 const Layout = () => {
@@ -26,12 +27,14 @@ const Layout = () => {
 						<Route exact path="/game">
 							<QuestionPage />
 						</Route>
-						{/* <Route exact path="/createprofile">
+
+						<Route exact path="/createprofile">
 							<CreateProfile />
 						</Route>
-						<Route exact path="/signin">
-							<SignIn />
-						</Route> */}
+
+						<Route exact path="/login">
+							<Login />
+						</Route>
 						<Route exact path="/collection">
 							<CollectionPage />
 						</Route>
