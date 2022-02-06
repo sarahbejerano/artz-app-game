@@ -6,7 +6,13 @@
 
     .modal-header {
         border: none;
-        padding: 10px;
+        display: flex;
+        align-items: right;
+        .favoriteButton {
+            margin-left: auto;
+            border: none;
+            background-color: transparent;
+        }
     }
     .modal-content {
         background-color: $color-charcoal;

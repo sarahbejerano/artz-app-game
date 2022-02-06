@@ -2,42 +2,42 @@
 
 .inputContainer {
     font-family: $primary-font;
-    .userNameSquare {
-        margin-top: 30px;
-        width: 70%;
-        height: 90%;
-        background-color: $color-red;
-        box-shadow: (3px 3px $color-bone);
-        text-align: left;
-
-        .nameProfile {
-            color: $color-bone;
-            font-family: $primary-font;
-            font-size: 60px;
-            margin-left: 20px;
+    .leftPanel {
+        padding-top: 60px;
+        padding-bottom: 15px;
+        .userNameSquare {
+            margin-top: 30px;
+            width: 70%;
+            height: 40%;
+            background-color: $color-red;
+            box-shadow: (3px 3px $color-bone);
+            text-align: left;
+            .nameProfile {
+                color: $color-bone;
+                font-family: $primary-font;
+                font-size: 50px;
+                margin-left: 20px;
+                margin-bottom: -10px;
+            }
+            .scorePlayer {
+                color: $color-bone;
+                font-family: $primary-font;
+                font-size: 40px;
+                margin-left: 20px;
+            }
         }
-        .scorePlayer {
-            color: $color-bone;
-            font-family: $primary-font;
-            font-size: 50px;
-            margin-left: 20px;
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
-            // margin-bottom: 3vh;
+        .greenSquare {
+            height: 10%;
+            width: 71%;
+            background-color: $color-green;
+            margin-top: 5vh;
         }
-    }
-    .greenSquare {
-        height: 20%;
-        width: 71%;
-        background-color: $color-green;
-        margin-top: 5vh;
     }
     .panelsContainer {
         display: flex;
         flex-direction: row;
         .leftPanel {
-            width: 40%;
+            width: 50%;
         }
         .rightPanel {
             width: 60%;
@@ -49,10 +49,16 @@
         }
     }
     .cardRow {
-        cardColumn {
+        max-height: 100%;
+        .cardColumn {
+            position: relative;
+            padding-top: 33.3%;
             .cardImage {
-                width: 100%;
-                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 90%;
+                height: 90%;
                 object-fit: cover;
             }
         }
