@@ -17,7 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				username: 'Pepito'
 			},
 			artworks: {},
-			favorites: [123, 3234, 2322, 2334, 4345, 34543, 34534, 232, 23, 324324, 23324],
+			favorites: [123, 3234, 2322, 2334, 4345, 34543, 34534, 232, 23],
 		},
 		actions: {
 			getQuestion: () => {

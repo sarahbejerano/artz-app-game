@@ -53,7 +53,7 @@ export const InfoArtwork = () => {
                                 onHide={() => setModalShow(false)}
                                 imageUrl={artwork.imageUrl}
                                 altText={artwork.thumbnail.alt_text}
-
+                                id={artwork.id}
                             />}
                         </div>
 

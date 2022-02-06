@@ -17,6 +17,10 @@
     .modal-footer {
         border-top: transparent;
         padding: 10px;
+        button {
+            border: none;
+            background-color: transparent;
+        }
     }
     .courtesyText {
         color: $color-bone;
