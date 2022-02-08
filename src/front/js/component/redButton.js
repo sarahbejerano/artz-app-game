@@ -3,10 +3,10 @@ import "../../styles/redButton.scss"
 import PropTypes from 'prop-types';
 
 
-export const RedButton = ({ text, callback, className }) => {
+export const RedButton = ({ text, callback, className, size }) => {
 
     return (
-        <button className={`red-button ${className} `}
+        <button className={`red-button ${className} ${size}`}
             onClick={callback}>
             <div className="body">
                 <p className="text">{text}</p>
@@ -19,6 +19,6 @@ export const RedButton = ({ text, callback, className }) => {
 RedButton.propTypes = {
     text: PropTypes.string,
     callback: PropTypes.func,
-
+    size: PropTypes.string,
 
 };

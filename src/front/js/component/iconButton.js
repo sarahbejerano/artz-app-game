@@ -6,10 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
-export const IconButton = ({ text, callback, variant = "icon", className, icon }) => {
+export const IconButton = ({ text, onClick, variant = "icon", className, icon }) => {
 
     return (
-        <button className={`icon-button ${variant} ${className} `} onClick={callback}>
+        <button className={`icon-button ${variant} ${className} `} onClick={onClick}>
             <div className="body">
                 {text && <p className="text">{text}</p>}
                 <FontAwesomeIcon className="fontIcon" icon={icon} />
@@ -21,6 +21,6 @@ export const IconButton = ({ text, callback, variant = "icon", className, icon }
 
 IconButton.propTypes = {
     text: PropTypes.string,
-    callback: PropTypes.func,
+    onClick: PropTypes.func,
     variant: PropTypes.string,
 };

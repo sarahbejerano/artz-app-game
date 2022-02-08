@@ -27,7 +27,9 @@
             a {
                 text-decoration: none;
                 color: $color-bone;
+                text-decoration: underline;
                 &:hover {
+                    color: $color-linen;
                     text-decoration: underline;
                 }
                 &:visited,
@@ -53,6 +55,9 @@
                 margin-bottom: 1%;
             }
             img {
+                &:hover {
+                    cursor: pointer;
+                }
                 margin: 5%;
                 height: 100%;
                 width: 100%;

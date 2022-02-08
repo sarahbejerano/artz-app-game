@@ -118,7 +118,10 @@ export const QuestionPage = () => {
                             </button>
 
                             <button className={`favoriteButton ${isFavorite ? 'remove' : ''}`} onClick={handleFavoriteButton}>
-                                <NewLineText text={isFavorite ? "Remove \n from \n favorites" : "Add \n To \n Favorites"} />
+                                <span className="desktopFav">
+                                    <NewLineText text={isFavorite ? "Remove \n from \n favorites" : "Add \n To \n Favorites"} />
+                                </span>
+                                <span className="mobileFav">{isFavorite ? "- Fav" : "+ fav"}</span>
                             </button>
 
                             <button className="moreInfoLink" onClick={() => setModalDetailShow(true)}>

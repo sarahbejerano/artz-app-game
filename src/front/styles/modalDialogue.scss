@@ -4,14 +4,14 @@
         background-color: $color-charcoal;
     }
     .modal-body {
-        margin: 5vh;
+        margin: 3vh;
         background-color: $color-charcoal;
         background-image: url("lizTaylor.jpeg");
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 80vh;
+        height: 40vh;
         background-size: auto 100%;
         background-repeat: no-repeat;
         background-position: center;
@@ -19,50 +19,69 @@
         .areYouSureText {
             color: $color-green;
             font-family: $primary-font;
-            font-size: 60px;
+            font-size: 40px;
             margin-bottom: 3vh;
             text-shadow: 0.5px 0.5px 0.5px $color-charcoal;
         }
         .yesImSure {
             margin-top: 3vh;
-            width: 60%;
+            width: 90%;
+            font-size: 10px;
         }
         .no {
-            width: 60%;
+            width: 90%;
         }
     }
 }
 
-// .modalDialogueContainer {
-//     font-family: $primary-font;
+@media screen and (min-width: $tiny-media-query) {
+    .modalDialogueContainer {
+        .modal-body {
+            margin: 5vh;
+            height: 50vh;
+            .areYouSureText {
+                font-size: 60px;
+            }
+            .yesImSure {
+                margin-top: 3vh;
+                width: 80%;
+            }
+            .no {
+                width: 80%;
+            }
+        }
+    }
+}
 
-// .modal-dialog {
-//     max-width: 200px;
-//     max-height: 200px;
+@media screen and (min-width: $small-media-query) {
+    .modalDialogueContainer {
+        .modal-dialog {
+            max-width: 80%;
+        }
+        .modal-body {
+            height: 80vh;
+            .yesImSure {
+                width: 70%;
+            }
+            .no {
+                width: 70%;
+            }
+        }
+    }
+}
 
-//     .modal-content {
-//         background-color: $color-charcoal;
-//         color: $color-bone;
-//         border-radius: 0;
-//         font-size: 5vh;
-//         line-height: 5vh;
-//         text-align: justify;
-//         padding: 1vh;
-//     }
-// }
-// .modal-header {
-//     border-bottom: transparent;
-// }
-// .imageModalContainer {
-//     img {
-//         width: 100%;
-//     }
-// }
-// .modal-footer {
-//     border-top: transparent;
-//     margin-top: -2vh;
-//     .yesImSure {
-//         margin-left: 2vh;
-//     }
-// }
-// }
+@media screen and (min-width: $large-media-query) {
+    .modalDialogueContainer {
+        .modal-dialog {
+            max-width: 800px;
+        }
+        .modal-body {
+            .yesImSure {
+                width: 60%;
+            }
+            .no {
+                width: 60%;
+            }
+        }
+    }
+}

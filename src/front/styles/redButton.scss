@@ -11,7 +11,7 @@
     .body {
         .text {
             margin-bottom: 0;
-            font-size: 30px;
+            font-size: 20px;
             margin: 0 20px;
         }
     }
@@ -19,5 +19,14 @@
         outline-style: outset;
         outline-color: $color-red;
         color: $color-bone;
+    }
+}
+@media screen and (min-width: $small-media-query) {
+    .red-button {
+        .body {
+            .text {
+                font-size: 30px;
+            }
+        }
     }
 }

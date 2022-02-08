@@ -6,7 +6,7 @@
         padding-top: 60px;
         padding-bottom: 15px;
         .userNameSquare {
-            margin-top: 30px;
+            margin-top: 10px;
             width: 70%;
             height: 40%;
             background-color: $color-red;
@@ -41,7 +41,7 @@
         }
         .rightPanel {
             width: 60%;
-            p {
+            .favoritesTitle {
                 color: $color-bone;
                 font-size: 50px;
                 text-align: center;
@@ -50,13 +50,14 @@
     }
     .cardRow {
         max-height: 100%;
+        margin: 0;
         .cardColumn {
             position: relative;
             padding-top: 33.3%;
             .cardImage {
                 position: absolute;
                 top: 0;
-                left: 0;
+                right: 0;
                 width: 90%;
                 height: 90%;
                 object-fit: cover;

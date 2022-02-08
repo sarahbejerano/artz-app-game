@@ -42,21 +42,22 @@ export const ModalMenu = ({ imageUrl, altText, id, ...props }) => {
             </Modal.Body>
             <Modal.Footer className="modalFooter">
 
-                <button
-                    className={`favoriteButton ${isFavorite ? 'remove' : ''}`}
-                    onClick={handleFavoriteButton}>
-                    {isFavorite ? <IconButton
+                {isFavorite ?
+                    <IconButton
                         icon={faHeart}
                         onClick={handleFavoriteButton}
-                        className="addToFavorite" /> :
-                        <IconButton
-                            icon={faHeartBroken}
-                            className="removeFromFavorite"
-                        />}
-                </button>
+                        className="favoriteButton addToFavorite"
+                    /> :
+                    <IconButton
+                        icon={faHeartBroken}
+                        onClick={handleFavoriteButton}
+                        className="favoriteButton removeFromFavorite"
+                    />
+                }
+
                 <IconButton
                     icon={faTimes}
-                    callback={props.onHide}
+                    onClick={props.onHide}
                 />
                 <p
                     className="courtesyText">
