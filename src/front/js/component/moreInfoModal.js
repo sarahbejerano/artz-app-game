@@ -35,21 +35,21 @@ export const MoreInfoModal = ({ image, altText, title, id, artist_title, date_en
             className="moreInfoModal" >
             <Modal.Header>
                 <p className="artTitle">"{title}"<br />  {artist_title} </p>
-                <Button
-                    className={`favoriteButton ${isFavorite ? 'remove' : ''}`}
-                    onClick={handleFavoriteButton}>
-                    {isFavorite ? <IconButton
+                {isFavorite ?
+                    <IconButton
                         icon={faHeart}
                         onClick={handleFavoriteButton}
-                        className="addToFavorite" /> :
-                        <IconButton
-                            icon={faHeartBroken}
-                            className="removeFromFavorite"
-                        />}
-                </Button>
+                        className="favoriteButton addToFavorite"
+                    /> :
+                    <IconButton
+                        icon={faHeartBroken}
+                        onClick={handleFavoriteButton}
+                        className="favoriteButton removeFromFavorite"
+                    />
+                }
                 <IconButton
                     icon={faTimes}
-                    callback={props.onHide}
+                    onClick={props.onHide}
                 />
             </Modal.Header>
 
@@ -65,7 +65,6 @@ export const MoreInfoModal = ({ image, altText, title, id, artist_title, date_en
 
 
             <Modal.Footer className="modalFooter">
-
                 <p className="courtesyText"> Courtesy of Art Institute of Chicago API </p>
             </Modal.Footer>
         </Modal >

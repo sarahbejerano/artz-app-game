@@ -61,7 +61,7 @@ export const UserProfile = ({ onQuit, ...props }) => {
                     <div className="greenSquare"></div>
                 </div>
                 <div className="rightPanel">
-                    <p>FAVORITES</p>
+                    <h2 className="favoritesTitle" >FAVORITES</h2>
                     <Row xs={1} md={3} className="cardRow">
                         {favorites.map((favorite, idx) => (
                             <Col key={idx}
