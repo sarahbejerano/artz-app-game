@@ -22,10 +22,12 @@ export const DialogueModal = ({ onQuit, ...props }) => {
                     text="No, I want to keep learning"
                     callback={props.onHide}
                     className="no"
+                    size="small"
                 />
                 <RedButton text="Yes, I'm sure" variant="secondary small"
                     callback={() => { onQuit() }}
                     className="yesImSure"
+                    size="small"
                 />
             </Modal.Body>
         </Modal >
