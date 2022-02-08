@@ -3,12 +3,14 @@
 .inputContainer {
     font-family: $primary-font;
     .leftPanel {
-        padding-top: 60px;
+        padding-top: 0;
         padding-bottom: 15px;
+        padding-left: 5%;
+        height: 300px;
         .userNameSquare {
             margin-top: 10px;
             width: 70%;
-            height: 40%;
+            height: 60%;
             background-color: $color-red;
             box-shadow: (3px 3px $color-bone);
             text-align: left;
@@ -35,12 +37,12 @@
     }
     .panelsContainer {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         .leftPanel {
-            width: 50%;
+            width: 100%;
         }
         .rightPanel {
-            width: 60%;
+            width: 100%;
             .favoritesTitle {
                 color: $color-bone;
                 font-size: 50px;
@@ -53,61 +55,50 @@
         margin: 0;
         .cardColumn {
             position: relative;
-            padding-top: 33.3%;
+            padding-top: 100%;
             .cardImage {
                 position: absolute;
                 top: 0;
-                right: 0;
+                right: 5%;
                 width: 90%;
                 height: 90%;
                 object-fit: cover;
             }
         }
     }
-    // .favoriteData {
-    //     color: $color-bone;
-    //     font-family: $primary-font;
-    //     font-size: 4vh;
-    // }
-
-    // .carouselContainer {
-    //     .favoriteCarousel {
-    //         height: 100%;
-    //         width: 100%;
-    //         p {
-    //             color: $color-bone;
-    //             font-size: 50px;
-    //         }
-    //         .carouselImage {
-    //             height: 100%;
-    //             width: auto;
-    //         }
-    //     }
-    // }
 }
 
-.profileFooter {
-    .closeButton {
-    }
-    .playButton {
+@media screen and (min-width: $small-media-query) {
+    .inputContainer {
+        .leftPanel {
+            padding-top: 60px;
+            padding-bottom: 15px;
+            padding-left: 0;
+            height: auto;
+        }
+        .panelsContainer {
+            flex-direction: row;
+            .leftPanel {
+                width: 50%;
+            }
+            .rightPanel {
+                width: 60%;
+            }
+        }
+        .cardRow {
+            max-height: 100%;
+            margin: 0;
+            .cardColumn {
+                position: relative;
+                padding-top: 33.3%;
+                .cardImage {
+                    top: 0;
+                    right: 0;
+                    width: 90%;
+                    height: 90%;
+                    object-fit: cover;
+                }
+            }
+        }
     }
 }
-
-//  .nameProfile {
-//         color: $color-bone;
-//         font-family: $primary-font;
-//         font-size: 7vh;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//     }
-
-//     .scoreplayer {
-//         color: $color-red;
-//         font-family: $primary-font;
-//         font-size: 8vh;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         margin-bottom: 3vh;
-//     }
