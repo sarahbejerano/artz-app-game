@@ -41,6 +41,7 @@ export const CollectionForPeriod = () => {
                                 altText={artwork.thumbnail.alt_text}
                                 title={artwork.title}
                                 artist={artwork.artist_title}
+                                thumbnail={artwork.thumbnail}
                             />
                         </Col>
                     )

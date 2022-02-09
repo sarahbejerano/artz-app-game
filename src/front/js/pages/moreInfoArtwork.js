@@ -9,7 +9,7 @@ import { ArtPeriods } from "../service/collectionGenerator";
 import { ModalMenu } from "../component/modal";
 
 export const InfoArtwork = () => {
-    const [modalShow, setModalShow] = React.useState(true);
+    const [modalShow, setModalShow] = React.useState(false);
     const { store, actions } = useContext(Context)
     const history = useHistory();
     const { id, style } = useParams();
