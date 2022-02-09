@@ -27,7 +27,8 @@ export const Login = () => {
     }
     useEffect(() => {
         if (store.user !== null) {
-            history.push("/login")
+            store.redirect ? history.push(store.redirect) : history.push("/");
+            actions.setRedirect(null);
         }
     }, [store.user]);
 

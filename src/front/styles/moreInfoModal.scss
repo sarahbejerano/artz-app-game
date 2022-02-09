@@ -4,6 +4,10 @@
     font-family: $primary-font;
     color: $color-linen;
 
+    .modal-dialog {
+        justify-content: center;
+    }
+
     .modal-header {
         border: none;
         display: flex;

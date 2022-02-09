@@ -23,13 +23,9 @@ export const CreateAccount = () => {
     const onProfileNameChanged = (e) => {
         setProfileName(e.target.value);
     };
-    const [avatarID, setAvatarID] = useState("");
-    const onAvatarIDChanged = (key) => {
-        setAvatarID(key);
-    };
     const onProfileSubmit = () => {
-        if (validator.isEmail(email) && !validator.isEmpty(password) && !validator.isEmpty(profileName) && !validator.isEmpty(avatarID)) {
-            actions.createUserProfile(email, password, profileName, avatarID);
+        if (validator.isEmail(email) && !validator.isEmpty(password) && !validator.isEmpty(profileName)) {
+            actions.createUserProfile(email, password, profileName);
         }
     }
     //se esta llamando la funcion cuando cambia el usuario, y si el usuario esta creado lo redireccionara a "/question page"

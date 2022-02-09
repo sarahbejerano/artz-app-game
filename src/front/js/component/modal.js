@@ -1,29 +1,31 @@
 
-import React, { useState, useEffect, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Modal } from "react-bootstrap";
 import PropTypes from "prop-types";
-import { useParams } from "react-router-dom";
 import { IconButton } from "../component/iconButton";
 import "../../styles/modalMenu.scss";
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeartBroken } from '@fortawesome/free-solid-svg-icons'
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
 export const ModalMenu = ({ imageUrl, altText, id, ...props }) => {
     const history = useHistory();
     const { store, actions } = useContext(Context);
-    const params = useParams();
-    const [modalDetailShow, setModalDetailShow] = React.useState(false);
     const favorites = store.favorites;
+    console.log(favorites)
     const handleFavoriteButton = () => {
-        if (isFavorite) {
-            actions.removeFromFavorites(id)
+        console.log(store.user)
+        if (store.user) {
+            if (isFavorite) {
+                actions.removeFromFavorites(id)
+            } else {
+                actions.addToFavorites(id)
+            }
         } else {
-            actions.addToFavorites(id)
+            history.push('/login');
         }
     }
     const isFavorite = favorites.includes(id);
@@ -41,8 +43,7 @@ export const ModalMenu = ({ imageUrl, altText, id, ...props }) => {
                     <img src={imageUrl} alt={altText} /></div>
             </Modal.Body>
             <Modal.Footer className="modalFooter">
-
-                {isFavorite ?
+                {!isFavorite ?
                     <IconButton
                         icon={faHeart}
                         onClick={handleFavoriteButton}

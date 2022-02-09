@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getState from "./flux.js";
-export const Context = React.createContext(null);
+export const Context = React.createContext();
 
 const injectContext = PassedComponent => {
 	const StoreWrapper = props => {
@@ -16,12 +16,6 @@ const injectContext = PassedComponent => {
 					})
 			})
 		);
-
-		useEffect(() => {
-
-			state.actions.loadUserFromLocalStore(); // <---- calling this function from the flux.js actions
-		}, []);
-
 
 		return (
 			<Context.Provider value={state}>

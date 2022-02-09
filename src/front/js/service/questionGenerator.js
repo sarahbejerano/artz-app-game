@@ -31,6 +31,11 @@ const elasticSearchParams =
                         "field": "style_title"
                     }
                 },
+                {
+                    "exists": {
+                        "field": "thumbnail"
+                    }
+                },
             ]
         }
     }
@@ -38,7 +43,7 @@ const elasticSearchParams =
 const encodedSearchParams = encodeURIComponent(JSON.stringify(elasticSearchParams));
 
 const getData = (uniqueProp) => {
-    return fetch("https://api.artic.edu/api/v1/artworks/search?limit=100&fields=artist_title,id,title,image_id,style_title,date_end,place_of_origin&params=" + encodedSearchParams)
+    return fetch("https://api.artic.edu/api/v1/artworks/search?limit=100&fields=artist_title,id,title,image_id,style_title,date_end,place_of_origin,thumbnail&params=" + encodedSearchParams)
         .then(resp => resp.json())
         .then(data => {
             const answers = [data.data[randomNumber(data.data.length)]];

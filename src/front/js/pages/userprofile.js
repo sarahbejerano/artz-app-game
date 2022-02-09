@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "../../styles/userProfile.scss";
 import PropTypes from "prop-types";
@@ -8,51 +8,50 @@ import { RedButton } from "../component/redButton";
 import { PageHeader } from "../component/header";
 import { Container, Row, Col, Carousel } from "react-bootstrap";
 import { MoreInfoModal } from "../component/moreInfoModal"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { faHeartBroken } from '@fortawesome/free-solid-svg-icons'
+
 
 
 export const UserProfile = ({ onQuit, ...props }) => {
     const history = useHistory();
     const { store, actions } = useContext(Context);
     const params = useParams();
-    const [modalDetailShow, setModalDetailShow] = React.useState(false);
+    const [modalDetailShow, setModalDetailShow] = useState(false);
+    const [favoriteInModal, setFavoriteInModal] = useState(null);
 
-    const favorites = store.favorites;
-    // useEffect(() => {
-    //     if (store.user === null) {
-    //         history.push("/")
-    //     }
-    // }, [store.user]);
+    const favoriteIds = store.favorites;
+    const favorites = store.artworks.favorites;
 
-    // const restartScore = () => {
-    //     actions.resetScore();
-    //     history.push("/")
-    // };
-    const handleFavoriteButton = () => {
-        if (isFavorite) {
-            actions.removeFromFavorites(store.question.correctAnswer.id)
-        } else {
-            actions.addToFavorites(store.question.correctAnswer.id)
+    useEffect(() => {
+        if (store.user === null) {
+            actions.setRedirect("/profile");
+            history.push("/login")
         }
+    }, [store.user]);
+
+    useEffect(() => {
+        actions.getUserFavorites();
+    }, [favoriteIds]);
+
+    const showModalFor = (favoriteIndex) => {
+        setFavoriteInModal(favoriteIndex);
+        setModalDetailShow(true);
     }
-    const isFavorite = store.question && store.favorites.includes(store.question.correctAnswer.id);
 
     return (
 
         <Container className="inputContainer">
-            <MoreInfoModal
-                show={modalDetailShow}
-                onHide={() => setModalDetailShow(false)}
-                {...store.favorites}
-            />
-
+            {favorites &&
+                <MoreInfoModal
+                    show={favoriteInModal !== null && favorites[favoriteInModal] && modalDetailShow}
+                    onHide={() => setModalDetailShow(false)}
+                    {...favorites[favoriteInModal]}
+                />
+            }
             <PageHeader />
             <div className="panelsContainer">
                 <div className="leftPanel">
                     <div className="userNameSquare">
-                        {store.user && <p className="nameProfile"> USERNAME
+                        {store.user && <p className="nameProfile">
                             {store.user.profileName}
                         </p>}
                         <div className="scorePlayer">{store.score}/10
@@ -63,27 +62,21 @@ export const UserProfile = ({ onQuit, ...props }) => {
                 <div className="rightPanel">
                     <h2 className="favoritesTitle" >FAVORITES</h2>
                     <Row xs={1} md={3} className="cardRow">
-                        {favorites.map((favorite, idx) => (
+                        {favorites && favorites.map((favorite, idx) => (
                             <Col key={idx}
                                 className="cardColumn">
                                 <button
-                                    className="moreInfoLink" onClick={() => setModalDetailShow(true)} className="cardImage"
-                                    src="https://via.placeholder.com/500x350"
-                                    alt="First slide"
-                                    width="100%"
-                                    height="100%"
+                                    className="moreInfoLink"
+                                    onClick={() => showModalFor(idx)}
+                                    className="cardImage"
                                 >
+                                    <img
+                                        src={favorite.imageUrl}
+                                        alt={favorite.title}
+                                        className={favorite.thumbnail.width > favorite.thumbnail.height ? "landscape" : "portrait"}
+                                    />
                                 </button>
-                                {/* <button className={`favoriteButton ${isFavorite ? 'remove' : ''}`} onClick={handleFavoriteButton}>
-                                    <FontAwesomeIcon
-                                        className="fontIcon"
-                                        icon={faHeart}
-                                    />
-                                    <FontAwesomeIcon
-                                        className="fontIcon"
-                                        icon={faHeartBroken}
-                                    />
-                                </button> */}
+
                             </Col>
                         ))}
                     </Row>

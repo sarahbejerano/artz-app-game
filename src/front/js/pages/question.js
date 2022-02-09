@@ -8,7 +8,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { DialogueModal } from '../component/dialogueModal'
 
 const NewLineText = ({ text }) => {
-    return text.split('\n').map(str => <p>{str}</p>);
+    return text.split('\n').map((str, key) => <p key={key}>{str}</p>);
 }
 
 export const QuestionPage = () => {
@@ -17,17 +17,29 @@ export const QuestionPage = () => {
     const [showIncorrect, setShowIncorrect] = useState(false);
     const [incorrectId, setIncorrectId] = useState(null);
     const [selectedId, setSelectedId] = useState("");
+    const [loading, setLoading] = useState(true);
     const [modalShow, setModalShow] = React.useState(false);
     const [modalDetailShow, setModalDetailShow] = React.useState(false);
 
     useEffect(() => {
-        if (store.score < 10) {
+        if (store.score === 10) {
+            actions.resetScore();
+        } else {
             actions.getQuestion();
         }
-        else {
-            history.push("/userprofile")
-        }
+        setLoading(false);
+    }, []);
 
+    useEffect(() => {
+        if (!loading) {
+            if (store.score < 10) {
+                setSelectedId("");
+                actions.getQuestion();
+            }
+            else {
+                history.push("/profile")
+            }
+        }
     }, [store.score]);
 
     const onRadioChanged = (e) => {
@@ -48,7 +60,6 @@ export const QuestionPage = () => {
     }, [showIncorrect]);
 
     const onQuit = () => {
-        actions.resetScore();
         history.push("/");
     }
 
@@ -62,12 +73,13 @@ export const QuestionPage = () => {
 
     useEffect(() => {
         if (store.user === null) {
-            history.push("/")
+            actions.setRedirect("/game");
+            history.push("/login")
         }
     }, [store.user]);
 
     const isFavorite = store.question && store.favorites.includes(store.question.correctAnswer.id);
-
+    if (store.question) console.log(store.question.correctAnswer)
     return (
         <>
             {store.question &&
@@ -90,6 +102,7 @@ export const QuestionPage = () => {
                                 <div className="imageContainer">
                                     <img
                                         src={store.question.correctAnswer.image}
+                                        className={store.question.correctAnswer.thumbnail.width > store.question.correctAnswer.thumbnail.height ? "landscape" : "portrait"}
                                     />
                                 </div>
                             </div>
