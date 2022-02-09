@@ -14,7 +14,11 @@
         margin-bottom: 20px;
     }
     .detailText {
-        margin: 0 0 20px 0;
-        font-size: 20px;
+        margin: 18px 0 24px 0;
+        font-size: 18px;
+        @media only screen and (min-width: $small-media-query) {
+            margin: 18px 0 24px 0;
+            font-size: 20px;
+        }
     }
 }

@@ -12,6 +12,12 @@
     padding: 0 30px;
     .pageTitle {
         position: absolute;
-        bottom: 5%;
+        bottom: 20px;
+        font-size: 45px;
+        @media only screen and (min-width: $small-media-query) {
+            position: absolute;
+            bottom: 45px;
+            font-size: 55px;
+        }
     }
 }

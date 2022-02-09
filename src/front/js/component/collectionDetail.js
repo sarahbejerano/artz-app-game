@@ -25,9 +25,9 @@ export const CollectionForPeriod = () => {
     }, []);
 
     return (
-        <div className="collectionForPeriodContainer">
+        <Container className="collectionForPeriodContainer">
             <PageHeader />
-            <Container>
+            <div>
                 <Row className="detailText">
                     {currentStyle.title}
                     {currentStyle.text}
@@ -47,8 +47,9 @@ export const CollectionForPeriod = () => {
                     )
                     )}
                 </Row>
-            </Container>
-        </div>
+
+            </div>
+        </Container>
     )
 };
 

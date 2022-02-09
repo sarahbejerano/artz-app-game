@@ -1,10 +1,9 @@
 import React from "react";
-import "../../styles/redButton.scss"
 import PropTypes from 'prop-types';
+import "../../styles/redButton.scss"
 
 
 export const RedButton = ({ text, callback, className, size }) => {
-
     return (
         <button className={`red-button ${className} ${size}`}
             onClick={callback}>

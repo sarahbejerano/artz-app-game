@@ -1,9 +1,7 @@
 import React from "react";
-import "../../styles/iconButton.scss"
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-
+import "../../styles/iconButton.scss"
 
 
 export const IconButton = ({ text, onClick, variant = "icon", className, icon }) => {

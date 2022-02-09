@@ -25,13 +25,7 @@ const ProgressMeter = ({ width }) => (
     </div>
 );
 
-const ProgressButton = ({ makeProgress, progress }) => (
-    <button onClick={makeProgress}>
-        {
-            progress == 100 ? ' Yay! ' : 'Progress'
-        }
-    </button>
-);
+
 
 
 

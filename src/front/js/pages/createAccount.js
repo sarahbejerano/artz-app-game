@@ -2,10 +2,10 @@ import React, { useContext, useState, useEffect } from "react";
 import validator from "validator";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/login.scss";
 import { RedButton } from "../component/redButton";
 import { PageHeader } from "../component/header";
 import { Container, Row, Col } from "react-bootstrap";
+import "../../styles/login.scss";
 
 export const CreateAccount = () => {
     const history = useHistory();
@@ -28,7 +28,7 @@ export const CreateAccount = () => {
             actions.createUserProfile(email, password, profileName);
         }
     }
-    //se esta llamando la funcion cuando cambia el usuario, y si el usuario esta creado lo redireccionara a "/question page"
+
     useEffect(() => {
         if (store.user !== null) {
             history.push("/game")

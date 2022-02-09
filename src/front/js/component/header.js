@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Nav, Navbar, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../styles/header.scss";
-import Logo from "../../img/logo-ok.png";
+import Logo from "../../img/Logo-v.2.png";
 
 export const PageHeader = () => {
     const { actions, store } = useContext(Context);

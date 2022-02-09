@@ -1,4 +1,3 @@
-
 import { getAuthorQuestion, getPeriodQuestion, getTitleQuestion, getArtMovementQuestion, } from '../service/questionGenerator';
 import { getArtworks } from '../service/cardContentGenerator'
 import { getFavorites } from '../service/favoritesGenerator';
