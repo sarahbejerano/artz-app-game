@@ -4,6 +4,7 @@ import { getArtworks } from '../service/cardContentGenerator'
 import { getFavorites } from '../service/favoritesGenerator';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { doc, setDoc, getFirestore, getDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+import { ArtPeriods } from "../service/collectionGenerator";
 
 const randomNumber = (limit) => Math.floor(Math.random() * limit);
 const questionsGenerators = [getAuthorQuestion, getPeriodQuestion, getTitleQuestion, getArtMovementQuestion];
@@ -54,6 +55,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 							}
 						});
 					});
+			},
+			getAllPeriods: () => {
+				const { artworks } = getStore();
+				Promise.all(
+					ArtPeriods
+						.filter(artPeriod => !artworks[artPeriod.title])
+						.map(artPeriod => {
+							return getArtworks(artPeriod.artworksQuery).then((newArtworks) => {
+								return {
+									[artPeriod.title]: newArtworks,
+								}
+							});
+						})
+				).then(results => {
+					const artworksByPeriod = results.reduce((periods, period) => {
+						return { ...periods, ...period };
+					}, {});
+					setStore({
+						artworks: {
+							...artworks,
+							...artworksByPeriod,
+						}
+					});
+				});
 			},
 			getUserFavorites: () => {
 				const { favorites } = getStore();

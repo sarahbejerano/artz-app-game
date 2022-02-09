@@ -16,11 +16,17 @@
         background-color: $color-green;
         box-shadow: 6px 6px 0px 0px $color-bone;
 
-        .cardImage {
-            padding: 10px;
+        .cardImageContainer {
             height: 77%;
-            object-fit: cover;
             width: 100%;
+        }
+        .cardImage {
+            margin: 10px;
+            height: calc(100% - 20px);
+            object-fit: cover;
+            width: calc(100% - 20px);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         .cardBody {
             flex-direction: column;
