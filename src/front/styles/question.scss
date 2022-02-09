@@ -65,7 +65,7 @@
         color: $color-green;
         text-align: center;
         h2 {
-            font-size: 30px;
+            font-size: 40px;
             height: 13%;
             display: flex;
             justify-content: center;
@@ -102,7 +102,7 @@
         border-bottom: solid $color-charcoal 10px;
         background-color: $color-green;
         color: $color-linen;
-        font-size: 26px;
+        font-size: 32px;
         text-align: left;
         padding-left: 10px;
         padding-top: 3%;
@@ -126,9 +126,9 @@
         border-bottom: solid $color-charcoal 10px;
         background-color: $color-linen;
         color: $color-charcoal;
-        font-size: 16px;
-        margin-top: 20px;
-        padding-left: 20px;
+        font-size: 20px;
+        margin-top: 8px;
+        padding-left: 8px;
         overflow: auto;
 
         .form-check {
@@ -154,8 +154,8 @@
         border-top: solid $color-charcoal 10px;
         background-color: $color-red;
         color: $color-green;
-        font-size: 40px;
-        padding-top: 0;
+        font-size: 55px;
+        padding-top: 2px;
         outline: 0;
         text-align: left;
         display: flex;
@@ -205,7 +205,7 @@
         border-right: none;
 
         .moreInfo {
-            font-size: 35px;
+            font-size: 40px;
             text-align: left;
             margin-left: 0;
             margin-bottom: 0;
@@ -217,11 +217,11 @@
             }
         }
         .dontBeAfraid {
-            line-height: 10pt;
-            font-size: 16px;
+            line-height: 15pt;
+            font-size: 18px;
             text-align: left;
             margin-left: 0;
-            margin-bottom: 0;
+            margin-bottom: 5px;
         }
     }
     .nextButton {

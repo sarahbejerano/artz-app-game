@@ -1,12 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/moreInfoArtworks.scss";
 import { Container } from "react-bootstrap";
 import { PageHeader } from "../component/header";
 import { useParams } from "react-router-dom";
 import { ArtPeriods } from "../service/collectionGenerator";
 import { ModalMenu } from "../component/modal";
+import "../../styles/moreInfoArtworks.scss";
+import { RedButton } from "../component/redButton";
+
 
 export const InfoArtwork = () => {
     const [modalShow, setModalShow] = React.useState(false);
@@ -19,8 +21,6 @@ export const InfoArtwork = () => {
     useEffect(() => {
         if (!artwork) {
             const validPeriod = ArtPeriods.find(period => period.title === style);
-
-            // No es un periodo valido
             if (!validPeriod) {
                 history.push("/collection")
             } else {
@@ -36,7 +36,6 @@ export const InfoArtwork = () => {
         <>
             {artwork && (
                 <Container className="infoArtWorkContainer">
-
                     <PageHeader />
                     <div className="infoArtworkBody" >
                         <div className={"artwork " + orientationClass} >
@@ -65,10 +64,12 @@ export const InfoArtwork = () => {
                             <p> {artwork.medium_display}</p>
                             <p>{artwork.dimensions}</p >
                         </div>
-
-
                     </div>
-
+                    <RedButton
+                        text="back"
+                        callback={() => history.goBack()}
+                        className="backButton"
+                    />
                 </Container>
             )
             }

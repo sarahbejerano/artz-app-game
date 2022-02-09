@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/question.scss";
 import { MoreInfoModal } from "../component/moreInfoModal"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 import { DialogueModal } from '../component/dialogueModal'
+import "../../styles/question.scss";
+
 
 const NewLineText = ({ text }) => {
     return text.split('\n').map((str, key) => <p key={key}>{str}</p>);
@@ -94,6 +95,7 @@ export const QuestionPage = () => {
                             show={modalDetailShow}
                             onHide={() => setModalDetailShow(false)}
                             {...store.question.correctAnswer}
+                            imageUrl={store.question.correctAnswer.image}
                         />
 
                         <div className="questionPageContainer">
@@ -136,13 +138,10 @@ export const QuestionPage = () => {
                                 </span>
                                 <span className="mobileFav">{isFavorite ? "- Fav" : "+ fav"}</span>
                             </button>
-
                             <button className="moreInfoLink" onClick={() => setModalDetailShow(true)}>
                                 <p className="moreInfo"> more info?</p>
                                 <p className="dontBeAfraid">(don't be afraid to ask)</p>
                             </button>
-
-
                             <button className="nextButton" onClick={() => onUserSubmit(selectedId)}>
                                 Next
                                 <FontAwesomeIcon
@@ -150,28 +149,6 @@ export const QuestionPage = () => {
                                     icon={faChevronRight}
                                 />
                             </button>
-
-
-
-
-
-
-
-
-                            {/* <RedButton
-                className="moreInfoButton"
-                text="+Info"
-                // variant="primary small"
-                callback={() => setModalShow(true)}
-
-            /> */}
-
-
-
-
-
-
-
                         </div>
                     </>
                 )

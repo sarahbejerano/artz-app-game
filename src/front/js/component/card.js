@@ -1,10 +1,8 @@
 import React from "react";
-
 import { Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom"
 import "../../styles/card.scss";
-
 
 export const CollectionCard = ({ url, image, title, year, artist, altText, thumbnail }) => {
     console.log(thumbnail, altText)

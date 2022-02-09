@@ -1,20 +1,16 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import "../../styles/userProfile.scss";
-import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { RedButton } from "../component/redButton";
 import { PageHeader } from "../component/header";
-import { Container, Row, Col, Carousel } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { MoreInfoModal } from "../component/moreInfoModal"
+import "../../styles/userProfile.scss";
 
 
-
-export const UserProfile = ({ onQuit, ...props }) => {
+export const UserProfile = () => {
     const history = useHistory();
     const { store, actions } = useContext(Context);
-    const params = useParams();
     const [modalDetailShow, setModalDetailShow] = useState(false);
     const [favoriteInModal, setFavoriteInModal] = useState(null);
 
@@ -38,7 +34,6 @@ export const UserProfile = ({ onQuit, ...props }) => {
     }
 
     return (
-
         <Container className="inputContainer">
             {favorites &&
                 <MoreInfoModal
@@ -81,27 +76,13 @@ export const UserProfile = ({ onQuit, ...props }) => {
                         ))}
                     </Row>
                 </div>
-                {/* <div className="profileFooter">
-                    <RedButton
-                        text="close"
-                        className="closeButton"
-                        callback={() => { restartScore() }} />
-                    <br />
-                    <RedButton
-                        text="play"
-                        className="playButton"
-                        callback={() => { restartScore() }} />
-                </div> */}
             </div>
-
         </Container>
 
 
     );
 };
 
-UserProfile.propTypes = {
-    onQuit: PropTypes.func,
-};
+
 
 

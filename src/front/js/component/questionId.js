@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { PageButton } from "../component/pageButton";
 import { Card } from "react-bootstrap";
 import PropTypes from "prop-types";
-import "../../styles/question.scss";
 import { ProgressBar } from "../component/progressBar";
 import { DialogueModal } from '../component/dialogueModal'
+import "../../styles/question.scss";
 
 export const QuestionId = ({
     questionPrompt,

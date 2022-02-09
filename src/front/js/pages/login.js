@@ -2,10 +2,10 @@ import React, { useContext, useState, useEffect } from "react";
 import validator from "validator";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/login.scss";
 import { RedButton } from "../component/redButton";
 import { PageHeader } from "../component/header";
 import { Container, Row, Col } from "react-bootstrap";
+import "../../styles/login.scss";
 
 
 export const Login = () => {
@@ -35,7 +35,6 @@ export const Login = () => {
     return (
         <div className="loginPage">
             <PageHeader />
-
             <Container className="inputContainer">
                 <Row xs={1} md={2}>
                     <Col>
@@ -59,7 +58,7 @@ export const Login = () => {
                                 callback={signIn}
                                 className="redButton"
                             />
-                            <p> don't have an account yet?
+                            <p> don't have an account?
                                 <a href="/createaccount">sign up </a>
                             </p>
                         </div>

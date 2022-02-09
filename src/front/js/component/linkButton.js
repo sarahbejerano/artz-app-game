@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
 export const LinkButton = ({ text, link, variant = "primary" }) => {
 
     return (
-
         <Link className="link-style" to={link}>
             <div className={`pixel-button ${variant}`}>
                 <div className="body">
@@ -19,9 +18,6 @@ export const LinkButton = ({ text, link, variant = "primary" }) => {
     )
 };
 
-
-
-// aqui se definen  los propTypes que voy a necesitar para el boton
 
 LinkButton.propTypes = {
     text: PropTypes.string,

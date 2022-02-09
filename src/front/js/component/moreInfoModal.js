@@ -1,14 +1,13 @@
 
 import React, { useContext } from "react";
-import { useHistory, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Modal } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { IconButton } from "../component/iconButton";
-import "../../styles/moreInfoModal.scss";
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeartBroken } from '@fortawesome/free-solid-svg-icons'
+import "../../styles/moreInfoModal.scss";
 
 
 export const MoreInfoModal = ({ imageUrl, altText, title, id, artist_title, date_end, style_title, place_of_origin, ...props }) => {
@@ -32,6 +31,19 @@ export const MoreInfoModal = ({ imageUrl, altText, title, id, artist_title, date
             className="moreInfoModal" >
             <Modal.Header>
                 <p className="artTitle">"{title}"<br />  {artist_title} </p>
+
+            </Modal.Header>
+
+            <Modal.Body>
+                <div className="imageModalContainer">
+                    <img src={imageUrl} alt={altText} />
+                </div>
+                <div className="countryDateMovement">{place_of_origin}, {date_end} <br />
+                    {style_title}
+                </div>
+
+            </Modal.Body>
+            <Modal.Footer className="modalFooter">
                 {!isFavorite ?
                     <IconButton
                         icon={faHeart}
@@ -47,22 +59,8 @@ export const MoreInfoModal = ({ imageUrl, altText, title, id, artist_title, date
                 <IconButton
                     icon={faTimes}
                     onClick={props.onHide}
+                    className="closeFavorite"
                 />
-            </Modal.Header>
-
-            <Modal.Body>
-                <div className="imageModalContainer">
-                    <img src={imageUrl} alt={altText} />
-                </div>
-                <div className="countryDateMovement">{place_of_origin}, {date_end} <br />
-                    {style_title}
-                </div>
-
-            </Modal.Body>
-
-
-            <Modal.Footer className="modalFooter">
-                <p className="courtesyText"> Courtesy of Art Institute of Chicago API </p>
             </Modal.Footer>
         </Modal >
     );

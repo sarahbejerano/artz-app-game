@@ -2,8 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import validator from "validator";
 import { useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/signIn.scss";
 import { PageButton } from "../component/pageButton";
+import "../../styles/signIn.scss";
 
 
 
@@ -32,7 +32,6 @@ export const SignIn = () => {
 
     return (
         <div className="signInPage">
-
             <h2>SIGN IN</h2>
             <div className="form-floating mb-3">
                 <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"

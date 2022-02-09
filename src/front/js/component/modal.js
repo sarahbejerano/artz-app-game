@@ -1,14 +1,13 @@
-
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Modal } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { IconButton } from "../component/iconButton";
-import "../../styles/modalMenu.scss";
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faHeartBroken } from '@fortawesome/free-solid-svg-icons'
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import "../../styles/modalMenu.scss";
 
 
 export const ModalMenu = ({ imageUrl, altText, id, ...props }) => {

@@ -3,7 +3,7 @@
 .navBarStyle {
     background-color: transparent;
     font-family: $primary-font;
-    font-size: 2em;
+    font-size: 32px;
 
     .divider {
         color: $color-red;
@@ -14,14 +14,15 @@
             display: flex;
         }
     }
-    // .navbar-expand-md .navbar-collapse {
-    //     display: flex !important;
-    //     flex-basis: auto;
-    //     margin-right: 40px;
-    // }
+}
+
+.navbar-light .navbar-toggler {
+    border: 3px solid $color-red;
+    background-color: $color-red;
 }
 
 .navbar-light .navbar-nav .nav-link {
+    font-size: 32px;
     color: $color-red;
     &.btn,
     &.btn-primary {
@@ -31,12 +32,15 @@
         outline: 0;
     }
 }
+
 .logo {
-    width: 100px;
-    height: 77px;
+    width: 147px;
+    height: 75px;
+    margin-top: 15px;
     @media only screen and (min-width: $small-media-query) {
-        width: 200px;
-        height: 152px;
+        width: 235px;
+        height: 120px;
+        margin-top: 15px;
     }
 }
 
@@ -68,8 +72,7 @@
     .navBarStyle {
         background-color: transparent;
         font-family: $primary-font;
-        font-size: 3em;
-
+        font-size: 48px;
         .divider {
             color: $color-red;
             display: none;
@@ -80,8 +83,10 @@
             }
         }
     }
+
     .navbar-light .navbar-nav .nav-link {
         color: $color-red;
+        font-size: 48px;
         &.btn,
         &.btn-primary {
             font-size: 48px;

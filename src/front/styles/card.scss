@@ -49,6 +49,13 @@
                 padding: 0 7px 2px 7px;
                 overflow: hidden;
                 text-overflow: quote($string: "");
+                @media only screen and (min-width: $small-media-query) {
+                    text-align: center;
+                    font-size: 25px;
+                    padding: 0 7px 2px 7px;
+                    overflow: hidden;
+                    text-overflow: quote($string: "");
+                }
             }
         }
     }
