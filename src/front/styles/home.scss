@@ -13,13 +13,13 @@
     .pageTitle {
         position: fixed;
         bottom: 20px;
-        font-size: 40px;
-        margin-right: 25px;
+        font-size: 45px;
+        margin-right: 35px;
         @media only screen and (min-width: $small-media-query) {
             position: absolute;
             bottom: 45px;
-            font-size: 55px;
-            margin-right: 20px;
+            font-size: 60px;
+            margin-right: 25px;
         }
     }
 }
