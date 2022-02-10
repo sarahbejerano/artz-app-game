@@ -33,7 +33,7 @@ export const UserProfile = () => {
     }
 
     return (
-        <Container className="inputContainer">
+        <Container className="profileContainer">
             {favorites &&
                 <MoreInfoModal
                     show={favoriteInModal !== null && favorites[favoriteInModal] && modalDetailShow}
