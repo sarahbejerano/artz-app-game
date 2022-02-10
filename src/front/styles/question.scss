@@ -50,11 +50,14 @@
         "item-b item-b item-b item-c item-c item-c item-c item-c"
         "item-e item-e item-f item-f item-f item-f item-f item-f"
         "item-d item-d item-d item-d item-g item-g item-g item-g";
-}
 
-.questionPageContainer {
     background-color: $color-linen;
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
     width: auto;
     font-family: $primary-font;
 
@@ -70,6 +73,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-bottom: 5px;
+            margin-top: 5px;
         }
         .imageContainer {
             margin: 0 auto;
@@ -102,7 +107,7 @@
         border-bottom: solid $color-charcoal 10px;
         background-color: $color-green;
         color: $color-linen;
-        font-size: 32px;
+        font-size: 30px;
         text-align: left;
         padding-left: 10px;
         padding-top: 3%;
@@ -132,7 +137,7 @@
         overflow: auto;
 
         .form-check {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .form-check-label {
@@ -155,11 +160,14 @@
         background-color: $color-red;
         color: $color-green;
         font-size: 55px;
+        padding: 0;
+        padding-left: 4px;
         padding-top: 2px;
         outline: 0;
         text-align: left;
         display: flex;
         align-items: start;
+
         &:hover {
             text-decoration: line-through;
         }
@@ -173,7 +181,8 @@
         background-color: $color-linen;
         color: $color-green;
         font-size: 40px;
-        padding-left: 5%;
+        padding-left: 2px;
+        padding-right: 0;
         padding-top: 0;
         text-align: left;
         transition: color 0.2s;
@@ -234,7 +243,7 @@
         border: none;
         border-top: solid $color-charcoal 10px;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         align-items: center;
         padding-right: 6px;
         .fontIcon {
@@ -279,7 +288,7 @@
 
         .imageAndProcessCounter {
             h2 {
-                font-size: 40px;
+                font-size: 50px;
             }
         }
         .nextButton {
@@ -352,7 +361,7 @@
             border-bottom: solid $color-charcoal 15px;
             background-color: $color-green;
             color: $color-linen;
-            font-size: 45px;
+            font-size: 55px;
             text-align: left;
             padding-left: 2%;
             padding-top: 3%;
@@ -372,7 +381,7 @@
             border-bottom: solid $color-charcoal 15px;
             background-color: $color-linen;
             color: $color-charcoal;
-            font-size: 26px;
+            font-size: 28px;
             margin-top: 25px;
             padding-left: 20px;
             overflow: auto;
@@ -444,7 +453,7 @@
             outline: 0;
 
             .moreInfo {
-                font-size: 50px;
+                font-size: 65px;
                 text-align: left;
                 margin-left: 10px;
                 margin-bottom: 2px;
@@ -547,7 +556,7 @@
             border-bottom: solid $color-charcoal 15px;
             background-color: $color-green;
             color: $color-linen;
-            font-size: 55px;
+            font-size: 60px;
             text-align: left;
             padding-left: 2%;
             padding-top: 3%;

@@ -30,6 +30,11 @@
         }
         .no {
             width: 90%;
+            .body {
+                .text {
+                    margin: 0;
+                }
+            }
         }
     }
 }

@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { PageHeader } from "../component/header";
 import { Container, Row, Col } from "react-bootstrap";

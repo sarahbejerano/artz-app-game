@@ -67,9 +67,14 @@
         }
     }
     .backButton {
-        position: absolute;
+        position: fixed;
         right: 25px;
         bottom: 15px;
+        .body {
+            .text {
+                margin: 0;
+            }
+        }
     }
 }
 
@@ -141,6 +146,11 @@
             position: absolute;
             right: 50px;
             bottom: 30px;
+            .body {
+                .text {
+                    margin: 0 20px;
+                }
+            }
         }
     }
 }

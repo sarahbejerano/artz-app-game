@@ -22,14 +22,15 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    font-size: 32px;
+    font-size: 48px;
     color: $color-red;
     &.btn,
     &.btn-primary {
         border: none;
-        font-size: 32px;
+        font-size: 48px;
         background: transparent;
         outline: 0;
+        text-align: left;
     }
 }
 
@@ -65,9 +66,19 @@
     &.btn-primary {
         border: none;
         outline: 0;
+        text-align: center;
     }
 }
-
+@media screen and (min-width: $small-media-query) {
+    .navbar-light .navbar-nav .nav-link {
+        color: $color-red;
+        font-size: 32px;
+        &.btn,
+        &.btn-primary {
+            font-size: 32px;
+        }
+    }
+}
 @media screen and (min-width: $large-media-query) {
     .navBarStyle {
         background-color: transparent;
