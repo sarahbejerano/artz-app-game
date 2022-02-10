@@ -11,10 +11,15 @@
     font-family: $primary-font;
     padding: 0 30px;
     .inputContainer {
-        height: 70%;
+        height: 35%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 90%;
+        margin: 0;
         .specialInput {
             flex-grow: 2;
         }
@@ -40,6 +45,7 @@
             .form-control {
                 font-size: 4vh;
                 background-color: $color-red;
+                width: 100%;
                 &:focus {
                     border-color: transparent;
                 }
@@ -60,6 +66,35 @@
                 &:hover {
                     text-decoration: underline;
                     color: $color-red;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $small-media-query) {
+    .loginPage {
+        .inputContainer {
+            height: 70%;
+            position: static;
+            bottom: unset;
+            left: unset;
+            width: unset;
+            .mb-3 {
+                .form-control {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $xlarge-media-query) {
+    .loginPage {
+        .inputContainer {
+            .mb-3 {
+                .form-control {
+                    width: 60%;
                 }
             }
         }
