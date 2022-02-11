@@ -4,7 +4,6 @@
     background-color: transparent;
     font-family: $primary-font;
     font-size: 32px;
-
     .divider {
         color: $color-red;
         display: none;
@@ -15,14 +14,14 @@
         }
     }
 }
-
 .navbar-light .navbar-toggler {
     border: 3px solid $color-red;
     background-color: $color-red;
+    height: 50px;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    font-size: 48px;
+    font-size: 36px;
     color: $color-red;
     &.btn,
     &.btn-primary {

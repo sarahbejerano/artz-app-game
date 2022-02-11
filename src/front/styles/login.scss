@@ -9,14 +9,14 @@
     background-size: cover;
     color: $color-red;
     font-family: $primary-font;
-    padding: 0 30px;
+    padding: 0 20px;
     .inputContainer {
-        height: 35%;
+        height: 30%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         position: absolute;
-        bottom: 10px;
+        bottom: 5px;
         left: 10px;
         width: 90%;
         margin: 0;
@@ -25,19 +25,18 @@
         }
         .mb-3 {
             font-family: $primary-font;
-            font-size: 2.5vh;
+            font-size: 2vh;
             border-radius: 0;
-            input {
-                font-size: 2.5vh;
-            }
+            // input {
+            //     font-size: 2vh;
+            // }
             &.form-floating {
                 label {
-                    padding: 0.65rem 0.75rem;
+                    padding: 0.65rem 0.5rem;
                     color: $color-linen;
                 }
                 .form-control {
                     color: $color-linen;
-                    font-size: 4vh;
                     border: none;
                     border-radius: 0;
                 }
