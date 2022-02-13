@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import validator from "validator";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { RedButton } from "../component/redButton";
 import { PageHeader } from "../component/header";
@@ -31,7 +31,8 @@ export const CreateAccount = () => {
 
     useEffect(() => {
         if (store.user !== null) {
-            history.push("/game")
+            store.redirect ? history.push(store.redirect) : history.push("/profile");
+            actions.setRedirect(null);
         }
     }, [store.user]);
 
@@ -69,7 +70,7 @@ export const CreateAccount = () => {
                                 className="redButton"
                             />
                             <p> already have an account?
-                                <a href="/login">login here </a>
+                                <Link to="/login">login here </Link>
                             </p>
                         </div>
                     </Col>

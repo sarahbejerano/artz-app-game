@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import validator from "validator";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { RedButton } from "../component/redButton";
 import { PageHeader } from "../component/header";
@@ -59,7 +59,7 @@ export const Login = () => {
                                 className="redButton"
                             />
                             <p> don't have an account?
-                                <a href="/createaccount">sign up </a>
+                                <Link to="/createaccount">sign up </Link>
                             </p>
                         </div>
                     </Col>
